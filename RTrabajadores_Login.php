@@ -43,7 +43,7 @@
         <main>
             <div class="login-box">
                 <h2>Inicio de sesión</h2>   
-                <?php include 'Controlador/controlador_sesion_trab.php'; ?> 
+                <?php include 'Controlador/Ctrl_Sesion_trab.php'; ?> 
                 <form action="#" method="POST"> 
                    <div class="user-box">
                     <input type="email" name="correo_tra" required="">

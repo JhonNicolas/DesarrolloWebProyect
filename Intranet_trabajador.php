@@ -1,9 +1,30 @@
+<?php
+session_start();
+require "Conectar.php";
+$con = fnConnect($msg);
+$user_Correo=$_SESSION['correo_tra'];
+$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo_trab='$user_Correo';";
+$respuesta = mysqli_query($con, $sql);
+    while($data=$respuesta->fetch_assoc()){
+        $idtrab = $data['ID_trab'];
+        $codadmin = $data['COD_admin'];
+        $nombretrab = $data['nom_trab'];
+        $apetrab = $data['ape_trab'];
+        $correotrab = $data['correo_trab'];
+        $contratrab = $data['contra_trab'];
+        $dnitrab = $data['dni_trab'];
+        $numerotrab = $data['numero_trab'];
+        $cargotrab = $data['cargo_trab'];
+        $idcargo = $data['ID_cargo'];
+        $nombrecargo = $data['nombre_cargo'];
+    }
+?>
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="../Imagenes/IProductos/Inicio/LOGO.jpg">
+        <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>    
-        <link href="EstiloDashboard.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS-Intranet/EstiloDash.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body> 
@@ -18,7 +39,7 @@
             <a href="#" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Accounts</a>
             <a href="#" class="icon-a"><i class="fa fa-list-alt icons"></i>&nbsp;&nbsp;Tasks</a>
         </div>
-        
+        <header   
         <div id="main">
             <div class="head">
                 <div class="col-div-6">
@@ -30,13 +51,14 @@
                 
                 <div class="col-div-6">
                     <div class="profile">
-                        <img src="../Imagenes/User-Avatar.png" class="pro-img">    
-                        <p>Manoj Adhikari <span>UI / UX DESIGNER</span></p>
+                        <img src="Imagenes/User-Avatar.png" class="pro-img">    
+                        <p><?php echo $nombretrab ?><span><?php echo $nombrecargo ?></span></p>
                     </div>
                  </div>
                 <div class="clearfix"></div>
             </div>
-            
+        </header>    
+        <main>    
             <div class="col-div-3">
                 <div class="box">
                     <p>67<br/><span>Customers</span></p>
@@ -91,6 +113,21 @@
                                 <td>Alfreds</td>
                                 <td>Futterkiste</td>
                             </tr>
+                            <tr>
+                                <td>Alfreds Futterkiste</td>
+                                <td>Alfreds</td>
+                                <td>Futterkiste</td>
+                            </tr>
+                            <tr>
+                                <td>Alfreds Futterkiste</td>
+                                <td>Alfreds</td>
+                                <td>Futterkiste</td>
+                            </tr>
+                            <tr>
+                                <td>Alfreds Futterkiste</td>
+                                <td>Alfreds</td>
+                                <td>Futterkiste</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
@@ -118,9 +155,11 @@
             <div class="clearfix"></div>
             
         </div>
-        
+        </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script type="text/javascript">
+            $("main").css('margin-left','300px');
+            $("main").css('transition','0.5s');
             $(".nav").click(function(){
                $("#mySidenav").css('width','70px');
                $("#main").css('margin-left','70px');
@@ -132,6 +171,8 @@
                $(".icons").css('margin-left','-8px');
                $(".nav").css('display','none');
                $(".nav2").css('display','block');
+               $("main").css('margin-left','70px');
+               
             });
             $(".nav2").click(function(){
                $("#mySidenav").css('width','300px');
@@ -142,6 +183,7 @@
                $(".icons").css('visibility','visible');
                $(".nav").css('display','block');
                $(".nav2").css('display','none');
+               $("main").css('margin-left','300px');
             });
         </script>
         
