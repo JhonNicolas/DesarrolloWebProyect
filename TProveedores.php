@@ -21,7 +21,7 @@ $mensaje=null;
         $con = fnConnect($msg);
         mysqli_query($con, "start transaction");
         $sqlinsert = "insert into proveedores(idProv, nombreProv, correo, RUC, telefono, direccion)values ('{$reg["idProv"]}','"
-        . "{$reg["nombreProv"]}','{$reg["correo"]}','{$reg["RUC"]}','{$reg["telefono"]}',{$reg["direccion"]};";
+        . "{$reg["nombreProv"]}','{$reg["correo"]}','{$reg["RUC"]}','{$reg["telefono"]}','{$reg["direccion"]}';";
                  //ejecutamos la consulta
         $respuesta = mysqli_query($con, $sqlinsert);
         if(!$respuesta){

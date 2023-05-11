@@ -1,40 +1,3 @@
-<?php
-require "Conectar.php";
-$con = fnConnect($msg);
-$sql = "select p.nombreProv,	p.correo, p.RUC, p.telefono, p.direccion"
-        . "from proveedores p;";
-$lista= mysqli_query($con, $sql);
-$numeracion=0; //contador de registros
-
-$error=null;
-$mensaje=null;
-    if(isset($_POST["enviar"])){
-        //capturando datos
-        $reg["nombreProv"] = $_POST["nombreProv"];
-        $reg["correo"] = $_POST["correo"];
-        $reg["RUC"] = $_POST["RUC"];
-        $reg["telefono"] = $_POST["telefono"];
-        $reg["direccion"] = $_POST["direccion"];
-        InsertarProveedor($reg, $mensaje, $error);
-    }
-    function InsertarProveedor($reg, &$mensaje, &$error){
-        $con = fnConnect($msg);
-        mysqli_query($con, "start transaction");
-        $sqlinsert = "insert into proveedores(nombreProv, correo, RUC, telefono, direccion)values ('{$reg["idProv"]}','"
-        . "{$reg["nombreProv"]}','{$reg["correo"]}','{$reg["RUC"]}','{$reg["telefono"]}',{$reg["direccion"]};";
-                 //ejecutamos la consulta
-        $respuesta = mysqli_query($con, $sqlinsert);
-        if(!$respuesta){
-            mysqli_query($con,"rollback");
-            $error = "<p>Datos ingresados no son correctos...</p>";
-            $error .= "<p>SQL: $sqlinsert </p>";
-            return;
-        }
-        //hacemos permanente los cambios
-        mysqli_query($con, "commit");
-        $mensaje = "<p>Cliente registrado correctamente..</p>";
-    }
-?>
 
 <html>
     <head>
@@ -44,7 +7,6 @@ $mensaje=null;
         <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Login/EstiloLogin.css" rel="stylesheet">
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -82,7 +44,8 @@ $mensaje=null;
         <main>
             <div class="login-box">
                 <h2>Registro Proveedor</h2>
-                <form>
+                <?php include 'Controlador/Ctrl_RProveedores.php';?>
+                <form action="#" method="POST">
                   <div class="user-box">
                     <input type="text" name="nombreProv" required="">
                     <label>Nombre</label>
@@ -103,13 +66,9 @@ $mensaje=null;
                     <input type="text" name="direccion" required="">
                     <label>Direccion</label>
                   </div>
-                  <a href="#" name="enviar" id="enviar" value="Enviar">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
-                  </a>
+                  <div class="boton-box">
+                      <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
+                  </div>
                 </form>
             </div>
         </main>   

@@ -43,7 +43,7 @@
         <main>
             <div class="login-box">
                 <h2>Registro Trabajador</h2>
-                <?php include 'Controlador/Ctrl_R_Trabajador.php';?>
+                <?php include 'Controlador/Ctrl_RTrabajador.php';?>
                 <form action="#" method="POST">
                   <div class="user-box">
                     <input type="text" name="nom_trab" required="">
@@ -81,7 +81,7 @@
                         
                   </div>  
                   <div class="boton-box">
-                      <input type="submit" name="enviar" value="Registrar cliente" id="enviar">
+                      <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
                   </div>
                 </form>
             </div>
