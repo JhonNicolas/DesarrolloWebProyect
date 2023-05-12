@@ -5,7 +5,7 @@
         <title>Restaurante Pihuicho</title>
         <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Login/EstiloLogin.css" rel="stylesheet">
+        <link href="CSS-Login/EstiloLogin2.css" rel="stylesheet">
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -43,7 +43,7 @@
         <main>
             <div class="login-box">
                 <h2>Inicio de sesión</h2>   
-                <?php include 'Controlador/Ctrl_Sesion_trab.php'; ?> 
+                <?php include 'Controlador/Ctrl_Login_trab.php'; ?> 
                 <form action="#" method="POST"> 
                    <div class="user-box">
                     <input type="email" name="correo_tra" required="">

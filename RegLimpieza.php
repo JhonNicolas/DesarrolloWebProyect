@@ -5,7 +5,7 @@
         <title>Restaurante Pihuicho</title>
         <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Login/EstiloLogin.css" rel="stylesheet">
+        <link href="CSS-Login/EstiloLogin2.css" rel="stylesheet">
         <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>

@@ -117,7 +117,11 @@ main{
     padding-right: 10px;
 }
 .col-div-8{
-    width: 70%;
+    width: 50%;
+    float: left;
+}
+.col-div-12{
+    width: 100%;
     float: left;
 }
 .col-div-4{
@@ -217,15 +221,10 @@ td, th{
 @media (max-width:1000px){
     .col-div-8{
         width: 100%;
+        margin: 10px 0 10px 0;
         display: flex;
         flex-direction: column;
-    }
-    .col-div-4{
-        width: 98.5%;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-    }    
+    }   
 } 
 @media (max-width:750px){
     .col-div-6{

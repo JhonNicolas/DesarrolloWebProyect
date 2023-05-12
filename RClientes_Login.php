@@ -6,7 +6,6 @@
         <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Login/EstiloLogin2.css" rel="stylesheet">
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -35,50 +34,31 @@
             
             <div class="info-header">
                 <nav>
-                    <a href="RClientes.php" >Registrar Usuario</a>
-                    <a href="InicioS.php" >Iniciar sesión</a>
+                    <a href="RClientes.php">Registrar usuario</a>
+                    <a href="RClientes_Login.php" >Iniciar sesión</a>
                 </nav>
             </div>            
         </header> 
-       
+        
         <main>
             <div class="login-box">
-                <h2>Registro Pedido</h2>
-                <form>
-                  <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Nombre Pedido</label>
-                  </div>
-                    <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Cantidad</label>
-                  </div>
-                    <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Encargado</label>
+                <h2>Inicio de sesión</h2>   
+                <?php include 'Controlador/Ctrl_Login_cliente.php'; ?> 
+                <form action="#" method="POST"> 
+                   <div class="user-box">
+                    <input type="email" name="correo_cli" required="">
+                    <label>Correo</label>
                   </div> 
-                    <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Costo</label>
+                  <div class="user-box">
+                    <input type="password" name="contra_cli" required="">
+                    <label>Contraseña</label>
                   </div>
-                    <div class="user-box">
-                    <input type="text" name="" required="" placeholder="Mercado Yarinacocha">
-                    <label>Proveedor</label>
-                  </div>
-                    
-                  <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
-                  </a>
+                  <div class="boton-box">
+                      <input type="submit" name="enviar" value="Iniciar sesion">
+                  </div>  
                 </form>
             </div>
         </main>   
-        
-        
-        
     </body>
 </html>
 

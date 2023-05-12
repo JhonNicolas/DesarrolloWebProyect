@@ -2,22 +2,19 @@
 session_start();
 require "Conectar.php";
 $con = fnConnect($msg);
-$user_Correo=$_SESSION['correo_tra'];
-$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo_trab='$user_Correo';";
-$respuesta = mysqli_query($con, $sql);
-    while($data=$respuesta->fetch_assoc()){
-        $idtrab = $data['ID_trab'];
+$userCorreo=$_SESSION['correo_cli'];
+$sqlcliente="SELECT * FROM clientes where correo_cli='$userCorreo';";
+$respu = mysqli_query($con, $sqlcliente);
+    while($datos=$respu->fetch_assoc()){
+        $idcli = $data['ID_cli'];
         $codadmin = $data['COD_admin'];
-        $nombretrab = $data['nom_trab'];
-        $apetrab = $data['ape_trab'];
-        $correotrab = $data['correo_trab'];
-        $contratrab = $data['contra_trab'];
-        $dnitrab = $data['dni_trab'];
-        $numerotrab = $data['numero_trab'];
-        $cargotrab = $data['cargo_trab'];
-        $idcargo = $data['ID_cargo'];
-        $nombrecargo = $data['nombre_cargo'];
-    }   
+        $nombrecli = $data['nom_cli'];
+        $apecli = $data['ape_cli'];
+        $correocli = $data['correo_cli'];
+        $contracli = $data['contra_cli'];
+        $dnicli = $data['DNI_cli'];
+        $numerocli = $data['cell_cli'];
+    }
 ?>
 <html>
     <head>
@@ -52,7 +49,7 @@ $respuesta = mysqli_query($con, $sql);
                 <div class="col-div-6">
                     <div class="profile">
                         <img src="Imagenes/User-Avatar.png" class="pro-img">    
-                        <p><?php echo $nombretrab ?><span><?php echo $nombrecargo ?></span></p>
+                        <p><?php echo $nombrecli ?><span><?php echo $correocli ?></span></p>
                     </div>
                  </div>
                 <div class="clearfix"></div>

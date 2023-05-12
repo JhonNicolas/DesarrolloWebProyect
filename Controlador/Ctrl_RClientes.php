@@ -26,14 +26,14 @@ $mensaje=null;
                  //ejecutamos la consulta
         $respuesta = mysqli_query($con, $sqlinsert);
         if($respuesta==0){
-            echo 'No se pudo registrar';
+            echo '<div class="alerta">Ingrese los datos correctos a los campos</div>';
             mysqli_query($con,"rollback");
             $error = "<p>Datos ingresados no son correctos...</p>";
             $error .= "<p>SQL: $sqlinsert </p>";
             return;
         }
         if($respuesta==1){
-            echo 'Registro completado';
+            echo '<div class="success">Registro completado</div>';
         }
         //hacemos permanente los cambios
         mysqli_query($con, "commit");

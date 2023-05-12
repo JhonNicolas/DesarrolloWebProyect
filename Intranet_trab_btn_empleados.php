@@ -17,7 +17,7 @@ $respuesta = mysqli_query($con, $sql);
         $cargotrab = $data['cargo_trab'];
         $idcargo = $data['ID_cargo'];
         $nombrecargo = $data['nombre_cargo'];
-    }   
+    }
 ?>
 <html>
     <head>
@@ -37,7 +37,7 @@ $respuesta = mysqli_query($con, $sql);
             <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Orders</a>
             <a href="#" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Inventory</a>
             <a href="Intranet_trab_btn_clientes.php" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
-            <a href="#" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Tasks</a>
+            <a href="#" class="icon-a"><i class="fa fa-list-alt icons"></i>&nbsp;&nbsp;Tasks</a>
         </div>
         <header   
         <div id="main">
@@ -59,114 +59,44 @@ $respuesta = mysqli_query($con, $sql);
             </div>
         </header>    
         <main>    
-            <div class="col-div-3">
-                <div class="box">
-                    <p>67<br/><span>Customers</span></p>
-                    <i class="fa fa-users box-icon"></i>
-                </div>
-            </div>
-            <div class="col-div-3">
-                <div class="box">
-                    <p>88<br/><span>Projects</span></p>
-                    <i class="fa fa-list box-icon"></i>
-                </div>
-            </div>
-            <div class="col-div-3">
-                <div class="box">
-                    <p>99<br/><span>Orders</span></p>
-                    <i class="fa fa-shopping-bag box-icon"></i>
-                </div>
-            </div>
-            <div class="col-div-3">
-                <div class="box">
-                    <p>78<br/><span>Tasks</span></p>
-                    <i class="fa fa-tasks box-icon"></i>
-                </div>
-            </div>
-            
-            <div class="clearfix"></div>
-            <br/><br/>
-            
-            <div class="col-div-8">
+            <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">
-                        <p>Últimos empleados registrados <span>Ver todo</span></p>
+                        <p>Empleados registrados <span>Ver todo</span></p>
                         <br/>
                         <table>
                             <tr>
+                                <th>ID</th>
                                 <th>Nombre</th>
+                                <th>Apelldio</th>
                                 <th>Correo</th>
+                                <th>Contraseña</th>
+                                <th>DNI</th>
+                                <th>Número</th>
                                 <th>Cargo</th>
                             </tr>
+                            <?php
+                                $llenarsql="select ID_trab,nom_trab,ape_trab,correo_trab,contra_trab,dni_trab,numero_trab,cargo_trab from trabajadores;";
+                                $result= mysqli_query($con, $llenarsql);
+                                while($mostrar= mysqli_fetch_array($result)){
+                            ?>
                             <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
+                                <td><?php echo $mostrar['ID_trab']?></td>
+                                <td><?php echo $mostrar['nom_trab']?></td>
+                                <td><?php echo $mostrar['ape_trab']?></td>
+                                <td><?php echo $mostrar['correo_trab']?></td>
+                                <td><?php echo $mostrar['contra_trab']?></td>
+                                <td><?php echo $mostrar['dni_trab']?></td>
+                                <td><?php echo $mostrar['numero_trab']?></td>
+                                <td><?php echo $mostrar['cargo_trab']?></td>
                             </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
+                            <?php 
+                                }
+                            ?>
                         </table>
                     </div>
                 </div>
-            </div>
-            <div class="col-div-8">
-                <div class="box-8">
-                    <div class="content-box">
-                        <p>Últimos clientes registrados <span>Ver todo</span></p>
-                        <br/>
-                        <table>
-                            <tr>
-                                <th>Company</th>
-                                <th>Contact</th>
-                                <th>Country</th>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
-<!--        <div class="col-div-4">
-                <div class="box-4">
-                    <div class="content-box">
-                        <p>Total Sale <span>View All</span></p>
-                        <div class="circle-wrap">
-                            <div class="circle">
-                                <div class="mask full">
-                                    <div class="fill"></div>
-                                </div>
-                                <div class="mask half">
-                                    <div class="fill"></div>
-                                </div>
-                                <div class="inside-circle">70%</div>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-            </div>      
--->  
+            </div>            
             
             <div class="clearfix"></div>
             
