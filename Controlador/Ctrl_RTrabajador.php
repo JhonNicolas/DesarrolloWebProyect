@@ -4,6 +4,7 @@ $con = fnConnect($msg);
 $sql = "select t.nom_trab, t.ape_trab, t.correo_trab,t.contra_trab,
     t.dni_trab, t.numero_trab, t.cargo_trab from trabajadores t;";
 $lista= mysqli_query($con, $sql);
+
 $consultacar = "select ID_cargo,nombre_cargo from cargo;";
 $Listacar = mysqli_query($con,$consultacar);
 $numeracion=0; //contador de registros

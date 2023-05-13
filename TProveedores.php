@@ -90,26 +90,32 @@ $mensaje=null;
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de inventario</a>
                             <ul class="dropdown-menu" _msthidden="3">
-                                <li><a class="dropdown-item" href="TInsumosC.php">INSUMOS PLATOS</a></li>
-                                <li><a class="dropdown-item" href="TLimpieza.php">LIMPIEZA</a></li>
-                                <li><a  class="dropdown-item" href="TMaterialesC.php">MATERIALES DE COCINA</a></li>
+                                <li><a class="dropdown-item" href="TArticulos.php">Articulos</a></li>
 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="TReservas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Reservas</a>
+                            <ul class="dropdown-menu" _msthidden="3">
+                                <li><a class="dropdown-item" href="TReservas.php">Reservas</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><br>
+        
+        <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
             
-       <table class="table table-dark table-striped table-hover " id="tblProductos">
+        </div>
+        
+        <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
+            <thead>
                 <tr class="Lineas">
-                    <th colspan="9" class="colorCabecera"> Lista de Proveedores </th>                   
+                    <th colspan="7" class="colorCabecera"> LISTA DE PROVEEDORES </th>                   
                 </tr>
                 <tr>
-                    <td class="colorCabecera">Nº</td>
                     <td class="colorCabecera">ID</td>
                     <td class="colorCabecera">NOMBRE</td>
                     <td class="colorCabecera">CORREO</td>
@@ -117,29 +123,34 @@ $mensaje=null;
                     <td class="colorCabecera">NUMERO</td>
                     <td class="colorCabecera">DIRECCION</td>
                 </tr>
-                <?php
-                while ($registro = mysqli_fetch_assoc($lista)){
-                    $numeracion++;
-                ?>
-                <tr>
-                    <td> <?php say($numeracion); ?></td>
-                    <td ><?php say($registro['idProv']) ?></td>
-                    <td ><?php say($registro['nombreProv']) ?></td>
-                    <td ><?php say($registro['correo']) ?></td>
-                    <td ><?php say($registro['RUC']) ?></td>
-                    <td ><?php say($registro['telefono']) ?></td>
-                    <td ><?php say($registro['direccion']) ?></td>
-                </tr>
-                <?php
-                }//fin del while
-                ?>  
-            </table>
-        
-       
+            </thead>    
+            <tbody>
         <?php
 
-        ?>
-        </form>
+        $busc= mysqli_query($con, $sql);
+
+        if($busc -> num_rows >0){
+            while($row= mysqli_fetch_array($busc)){
+          
+        
+        ?> 
+        <tr>
+            <td ><?php echo $row['idProv']; ?></td>
+            <td ><?php echo $row['nombreProv']; ?></td>
+            <td ><?php echo $row['correo']; ?></td>
+            <td ><?php echo $row['RUC']; ?></td>
+            <td ><?php echo $row['telefono']; ?></td>
+            <td ><?php echo $row['direccion']; ?></td>
+        </tr>
+            
+        <?php
+}
+}
+
+?>
+
+</table>       
+        <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RArticulos.php"><b>Registrar Proveedor</b></a> </button> 
   </body>
-  
+  <script src="js/buscador.js" type="text/javascript"></script>
 </html>

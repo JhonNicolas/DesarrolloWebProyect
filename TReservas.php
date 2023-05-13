@@ -53,16 +53,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de inventario</a>
                             <ul class="dropdown-menu" _msthidden="3">
-                                <li><a class="dropdown-item" href="TInsumosC.php">INSUMOS PLATOS</a></li>
-                                <li><a class="dropdown-item" href="TLimpieza.php">LIMPIEZA</a></li>
-                                <li><a  class="dropdown-item" href="TMaterialesC.php">MATERIALES DE COCINA</a></li>
+                                <li><a class="dropdown-item" href="TArticulos.php">Articulos</a></li>
 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="TReservas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Reservas</a>
+                            <ul class="dropdown-menu" _msthidden="3">
+                                <li><a class="dropdown-item" href="TReservas.php">Reservas</a></li>
+                            </ul>
                         </li>
-                        
                     </ul>
                 </div>
             </div>

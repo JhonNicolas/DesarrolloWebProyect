@@ -58,7 +58,12 @@ $respuesta = mysqli_query($con, $sql);
                 <div class="clearfix"></div>
             </div>
         </header>    
-        <main>    
+        <main> 
+            
+            
+            
+            
+            
             <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">

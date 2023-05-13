@@ -57,19 +57,16 @@
                         <img src="Imagenes/MercadoV2.jpg">
                         <h4>Mercado Yarinacocha</h4>
                         <p>Estamos asociados a un mercado ubicado cerca a nuestra localidad, lo que nos facilita hacer la compra y transporte de los alimentos perecibles.</p>
-                        <a href="RegMatC.php">Ver más</a>
                     </div>
                     <div class="card">
                         <img src="Imagenes/TiendaLimpieza.jpg">
                         <h4>Tienda de Limpieza</h4>
                         <p>Estamos asociados con "Distribuidora Patita Pucallpa SAC", la cual nos suministra productos de limpieza.</p>
-                        <a href="RegLimpieza.php">Ver más</a>
                     </div>
                     <div class="card">
                         <img src="Imagenes/TiendaUtensilios.jpg">
                         <h4>Tienda de utensilios de cocina</h4>
                         <p>Estamos asociados con "Tienda Qallwa", la que nos proporciona los utensilios suficientes para la preparación de los platos.</p>
-                        <a href="RegMatC.php">Ver más</a>
                     </div>
                 </div>
         </main>

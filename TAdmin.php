@@ -64,7 +64,7 @@ $mensaje=null;
     
     
 
-        <h1 align="left">TABLA DE CLIENTES</h1>
+        <h1 align="left">TABLA DE ADMINISTRADORES</h1>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" _msthash="1940757" _msttexthash="381446">Registros</a>
@@ -86,44 +86,57 @@ $mensaje=null;
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de inventario</a>
                             <ul class="dropdown-menu" _msthidden="3">
-                                <li><a class="dropdown-item" href="TInsumosC.php">INSUMOS PLATOS</a></li>
-                                <li><a class="dropdown-item" href="TLimpieza.php">LIMPIEZA</a></li>
-                                <li><a  class="dropdown-item" href="TMaterialesC.php">MATERIALES DE COCINA</a></li>
+                                <li><a class="dropdown-item" href="TArticulos.php">Articulos</a></li>
 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="TReservas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Reservas</a>
+                            <ul class="dropdown-menu" _msthidden="3">
+                                <li><a class="dropdown-item" href="TReservas.php">Reservas</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><br>
+        
+       <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
             
-       <table class="table table-dark table-striped table-hover " id="tblProductos">
+        </div>
+        
+        <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
+            <thead>
                 <tr class="Lineas">
-                    <th colspan="3" class="colorCabecera"> Lista de Administradores </th>                   
+                    <th colspan="7" class="colorCabecera"> LISTA DE ADMINISTRADORES </th>                   
                 </tr>
                 <tr>
-                    <td class="colorCabecera">Nº</td>
                     <td class="colorCabecera">ID</td>
                     <td class="colorCabecera">NOMBRE</td>
                 </tr>
-                <?php
-                while ($registro = mysqli_fetch_assoc($lista)){
-                    $numeracion++;
-                ?>
-                <tr>
-                    <td ><?php say($numeracion); ?></td>
-                    <td ><?php say($registro['COD_admin']) ?></td>
-                    <td ><?php say($registro['nombre_admin']) ?></td>
-                </tr>
-                <?php
-                }//fin del while
-                ?> 
-            </table>
+            </thead>    
+            <tbody>
+        <?php
 
-        </form>
+        $busc= mysqli_query($con, $sql);
+
+        if($busc -> num_rows >0){
+            while($row= mysqli_fetch_array($busc)){
+        ?> 
+
+        <tr>
+            <td ><?php echo $row['COD_admin']; ?></td>
+            <td ><?php echo $row['nombre_admin']; ?></td>
+        </tr>  
+        <?php
+}
+}
+   ?>
+
+</table>       
+
   </body>
-  
+  <script src="js/buscador.js" type="text/javascript"></script>
+
 </html>

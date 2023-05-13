@@ -6,7 +6,6 @@
         <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Login/EstiloLogin2.css" rel="stylesheet">
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -43,36 +42,54 @@
        
         <main>
             <div class="login-box">
-                <h2>Registro Pedido</h2>
-                <form>
+                <h2>Registro de Articulos</h2>
+                <?php include 'Controlador/Ctrl_RArticulos.php';?>
+                <form action="#" method="POST">
                   <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Nombre Pedido</label>
+                    <input type="text" name="nom_articulo" required="">
+                    <label>Nombre Compra</label>
                   </div>
                     <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="cantidad" required="">
                     <label>Cantidad</label>
                   </div>
+                  <div class="user-box">
+                      <label>Categoria de Producto</label><br><br>
+                      <select class="select-box" name="Cproducto">
+                         <?php while ($row = mysqli_fetch_assoc($Listacp)) { ?>
+                                <option value="<?php echo $row["ID_cat"]?>">
+                                  <?php echo $row["nombre_cat"]?>  
+                                </option>                        
+                       <?php } ?>
+                      </select> 
+                  </div>  <br>                     
                     <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Encargado</label>
-                  </div> 
+                      <label>Encargado</label><br><br>
+                      <select class="select-box" name="Encargado">
+                         <?php while ($row = mysqli_fetch_assoc($Listatrab)) { ?>
+                                <option value="<?php echo $row["nom_trab"]?>">
+                                  <?php echo $row["nom_trab"]?>  
+                                </option>                        
+                       <?php } ?>
+                      </select> 
+                  </div>  <br> 
                     <div class="user-box">
-                    <input type="text" name="" required="">
+                    <input type="text" name="precioA" required="">
                     <label>Costo</label>
                   </div>
                     <div class="user-box">
-                    <input type="text" name="" required="" placeholder="Mercado Yarinacocha">
-                    <label>Proveedor</label>
+                      <label>Proveedor</label><br><br>
+                      <select class="select-box" name="Proveedor">
+                         <?php while ($row = mysqli_fetch_assoc($Listaprov)) { ?>
+                                <option value="<?php echo $row["idProv"]?>">
+                                  <?php echo $row["nombreProv"]?>  
+                                </option>                        
+                       <?php } ?>
+                    </select>    
+                  </div>  
+                  <div class="boton-box">
+                      <input type="submit" name="enviar" value="Registrar Articulo" id="enviar">
                   </div>
-                    
-                  <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
-                  </a>
                 </form>
             </div>
         </main>   

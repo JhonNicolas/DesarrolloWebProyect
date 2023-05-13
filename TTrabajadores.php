@@ -40,7 +40,7 @@ $mensaje=null;
     }
 ?>
 
-<html>
+
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
@@ -94,59 +94,72 @@ $mensaje=null;
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de inventario</a>
                             <ul class="dropdown-menu" _msthidden="3">
-                                <li><a class="dropdown-item" href="TInsumosC.php">INSUMOS PLATOS</a></li>
-                                <li><a class="dropdown-item" href="TLimpieza.php">LIMPIEZA</a></li>
-                                <li><a  class="dropdown-item" href="TMaterialesC.php">MATERIALES DE COCINA</a></li>
+                                <li><a class="dropdown-item" href="TArticulos.php">Articulos</a></li>
 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="TReservas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Reservas</a>
+                            <ul class="dropdown-menu" _msthidden="3">
+                                <li><a class="dropdown-item" href="TReservas.php">Reservas</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-            
-       <table class="table table-dark table-striped table-hover " id="tblProductos">
-                <tr class="Lineas">
-                    <th colspan="10" class="colorCabecera"> INSUMOS DE PLATOS </th>                   
-                </tr>
-                <tr>
-                    <td class="colorCabecera">Nº</td>
-                    <td class="colorCabecera">ID</td>
-                    <td class="colorCabecera">NOMBRE</td>
-                    <td class="colorCabecera">APELLIDO</td>
-                    <td class="colorCabecera">CORREO</td> 
-                    <td class="colorCabecera">CONTRASEÑA</td> 
-                    <td class="colorCabecera">DNI</td> 
-                    <td class="colorCabecera">NUMERO</td> 
-                    <td class="colorCabecera">CARGO</td>
-                </tr>
-                <?php
-                while ($registro = mysqli_fetch_assoc($lista)){
-                    $numeracion++;
-                ?>
-                <tr>
-                    <td> <?php say($numeracion); ?></td>
-                    <td ><?php say($registro['ID_trab']) ?></td>
-                    <td ><?php say($registro['nom_trab']) ?></td>
-                    <td ><?php say($registro['ape_trab']) ?></td>
-                    <td ><?php say($registro['correo_trab']) ?></td>
-                    <td ><?php say($registro['contra_trab']) ?></td>
-                    <td ><?php say($registro['dni_trab']) ?></td>
-                    <td ><?php say($registro['numero_trab']) ?></td>
-                    <td ><?php say($registro['cargo_trab']) ?></td>
-                </tr>
-                <?php
-                }//fin del while
-                ?>  
-            </table>
+        </nav><br>
         
+        <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
+            
+        </div>
+        
+        <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
+            <thead>
+                <tr class="Lineas">
+                    <th colspan="10" class="colorCabecera"> LISTA DE TRABAJADORES </th>                   
+                </tr>
+                <tr>
+                    <th class="colorCabecera">ID</th>
+                    <th class="colorCabecera">NOMBRE</th>
+                    <th class="colorCabecera">APELLIDO</th>
+                    <th class="colorCabecera">CORREO</th> 
+                    <th class="colorCabecera">CONTRASEÑA</th> 
+                    <th class="colorCabecera">DNI</th> 
+                    <th class="colorCabecera">NUMERO</th> 
+                    <th class="colorCabecera">CARGO</th>
+                </tr>
+            </thead>    
+            <tbody>
         <?php
 
-        ?>
+        $busc= mysqli_query($con, $sql);
 
-  </body>
+        if($busc -> num_rows >0){
+            while($row= mysqli_fetch_array($busc)){
+          
+        
+        ?> 
+        <tr>
+            <td ><?php echo $row['ID_trab']; ?></td>
+            <td ><?php echo $row['nom_trab']; ?></td>
+            <td ><?php echo $row['ape_trab']; ?></td>
+            <td ><?php echo $row['correo_trab']; ?></td>
+            <td ><?php echo $row['contra_trab']; ?></td>
+            <td ><?php echo $row['dni_trab']; ?></td>
+            <td ><?php echo $row['numero_trab']; ?></td>
+            <td ><?php echo $row['cargo_trab']; ?></td>
+        </tr>
+            
+        <?php
+}
+}
+
+?>
+
+</table>       
+        
   
+  </body>
+        <script src="js/buscador.js" type="text/javascript"></script>
 </html>
