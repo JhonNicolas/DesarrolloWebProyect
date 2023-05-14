@@ -72,25 +72,22 @@ $numeracion=0; //contador de registros
             <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">
-                        <p>Empleados registrados <span>Ver todo</span></p>
+                        <p>Proveedores registrados <span>Ver todo</span></p>
                         <br/>
-                         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
+                         <table class="table table-dark table-striped table-hover table_id" id="tblProveedores">
                             <thead>
                                 <tr>
-                                    <th class="colorCabecera">ID</th>
-                                    <th class="colorCabecera">NOMBRE</th>
-                                    <th class="colorCabecera">APELLIDO</th>
-                                    <th class="colorCabecera">CORREO</th> 
-                                    <th class="colorCabecera">CONTRASEÑA</th> 
-                                    <th class="colorCabecera">DNI</th> 
-                                    <th class="colorCabecera">NUMERO</th> 
-                                    <th class="colorCabecera">CARGO</th>
+                                    <td class="colorCabecera">ID</td>
+                                    <td class="colorCabecera">NOMBRE</td>
+                                    <td class="colorCabecera">CORREO</td>
+                                    <td class="colorCabecera">RUC</td> 
+                                    <td class="colorCabecera">NUMERO</td>
+                                    <td class="colorCabecera">DIRECCION</td>
                                 </tr>
                             </thead>  
                             <?php
                             
-                                $llenarsql="select t.ID_trab,t.nom_trab,t.ape_trab,t.correo,t.contra,t.dni_trab,t.numero_trab,t.cargo_trab from trabajadores t;";
-                                
+                               $llenarsql="select p.idProv, p.nombreProv,p.correo, p.RUC, p.telefono, p.direccion from proveedores p;";
                                $busc= mysqli_query($con, $llenarsql);
 
                             if($busc -> num_rows >0){
@@ -98,14 +95,12 @@ $numeracion=0; //contador de registros
 
                             ?>
                             <tr>
-                                <td><?php echo $mostrar['ID_trab']?></td>
-                                <td><?php echo $mostrar['nom_trab']?></td>
-                                <td><?php echo $mostrar['ape_trab']?></td>
+                                <td><?php echo $mostrar['idProv']?></td>
+                                <td><?php echo $mostrar['nombreProv']?></td>
                                 <td><?php echo $mostrar['correo']?></td>
-                                <td><?php echo $mostrar['contra']?></td>
-                                <td><?php echo $mostrar['dni_trab']?></td>
-                                <td><?php echo $mostrar['numero_trab']?></td>
-                                <td><?php echo $mostrar['cargo_trab']?></td>
+                                <td><?php echo $mostrar['RUC']?></td>
+                                <td><?php echo $mostrar['telefono']?></td>
+                                <td><?php echo $mostrar['direccion']?></td>
                             </tr>
                             <?php 
                             }}
@@ -115,7 +110,7 @@ $numeracion=0; //contador de registros
                     </div>
                 </div>
         </div>            
-        <br><button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RTrabajador.php"><b>Registrar Trabajador</b></a> </button>  
+        <br><button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RProveedor.php"><b>Registrar Proveedor</b></a> </button>  
             <div class="clearfix"></div>
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -151,3 +146,4 @@ $numeracion=0; //contador de registros
         <script src="js/buscador.js" type="text/javascript"></script>
     </body>
 </html>
+

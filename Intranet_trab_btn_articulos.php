@@ -72,25 +72,24 @@ $numeracion=0; //contador de registros
             <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">
-                        <p>Empleados registrados <span>Ver todo</span></p>
+                        <p>Proveedores registrados <span>Ver todo</span></p>
                         <br/>
-                         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
+                         <table class="table table-dark table-striped table-hover table_id" id="tblProveedores">
                             <thead>
                                 <tr>
-                                    <th class="colorCabecera">ID</th>
-                                    <th class="colorCabecera">NOMBRE</th>
-                                    <th class="colorCabecera">APELLIDO</th>
-                                    <th class="colorCabecera">CORREO</th> 
-                                    <th class="colorCabecera">CONTRASEÑA</th> 
-                                    <th class="colorCabecera">DNI</th> 
-                                    <th class="colorCabecera">NUMERO</th> 
-                                    <th class="colorCabecera">CARGO</th>
+                                    <td class="colorCabecera">ID</td>
+                                    <td class="colorCabecera">NOMBRE</td>
+                                    <td class="colorCabecera">CANTIDAD</td>
+                                    <td class="colorCabecera">CATEGORIA DE P.</td>
+                                    <td class="colorCabecera">ENCARGADO</td>
+                                    <td class="colorCabecera">COSTO (S/.)</td>
+                                    <td class="colorCabecera">PROVEEDOR</td> 
                                 </tr>
                             </thead>  
                             <?php
                             
-                                $llenarsql="select t.ID_trab,t.nom_trab,t.ape_trab,t.correo,t.contra,t.dni_trab,t.numero_trab,t.cargo_trab from trabajadores t;";
-                                
+                               $llenarsql="select a.ID_Articulo, a.nom_articulo, a.cantidad, a.Cproducto, a.Encargado, a.precioA, a.Proveedor, a.CProducto 
+                                            from Articulo a;";
                                $busc= mysqli_query($con, $llenarsql);
 
                             if($busc -> num_rows >0){
@@ -98,14 +97,13 @@ $numeracion=0; //contador de registros
 
                             ?>
                             <tr>
-                                <td><?php echo $mostrar['ID_trab']?></td>
-                                <td><?php echo $mostrar['nom_trab']?></td>
-                                <td><?php echo $mostrar['ape_trab']?></td>
-                                <td><?php echo $mostrar['correo']?></td>
-                                <td><?php echo $mostrar['contra']?></td>
-                                <td><?php echo $mostrar['dni_trab']?></td>
-                                <td><?php echo $mostrar['numero_trab']?></td>
-                                <td><?php echo $mostrar['cargo_trab']?></td>
+                                <td ><?php echo $mostrar['ID_Articulo'] ?></td>
+                                <td ><?php echo $mostrar['nom_articulo'] ?></td>
+                                <td ><?php echo $mostrar['cantidad'] ?></td>
+                                <td ><?php echo $mostrar['Cproducto'] ?></td>
+                                <td ><?php echo $mostrar['Encargado'] ?></td>
+                                <td ><?php echo $mostrar['precioA'] ?></td>
+                                <td ><?php echo $mostrar['Proveedor'] ?></td>
                             </tr>
                             <?php 
                             }}
@@ -115,7 +113,7 @@ $numeracion=0; //contador de registros
                     </div>
                 </div>
         </div>            
-        <br><button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RTrabajador.php"><b>Registrar Trabajador</b></a> </button>  
+        <br><button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RArticulos.php"><b>Registrar Articulo</b></a> </button>  
             <div class="clearfix"></div>
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -151,3 +149,5 @@ $numeracion=0; //contador de registros
         <script src="js/buscador.js" type="text/javascript"></script>
     </body>
 </html>
+
+
