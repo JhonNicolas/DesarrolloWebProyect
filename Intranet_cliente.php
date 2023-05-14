@@ -4,6 +4,7 @@ require "Conectar.php";
 $con = fnConnect($msg);
 $userCorreo=$_SESSIONCLI['correo'];
 $sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
+$numeracion=0; //contador de registros
 $respu = mysqli_query($con, $sqlcliente);
     while($datos=$respu->fetch_assoc()){
         $idcli = $data['ID_cli'];
@@ -84,62 +85,82 @@ $respu = mysqli_query($con, $sqlcliente);
             <div class="clearfix"></div>
             <br/><br/>
             
-            <div class="col-div-8">
+            <div class="col-div-10">
                 <div class="box-8">
                     <div class="content-box">
                         <p>Últimos empleados registrados <span>Ver todo</span></p>
                         <br/>
                         <table>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Cargo</th>
+                                <th class="colorCabecera">ID</th>
+                                <th class="colorCabecera">NOMBRE</th>
+                                <th class="colorCabecera">APELLIDO</th>
+                                <th class="colorCabecera">CORREO</th> 
+                                <th class="colorCabecera">CONTRASEÑA</th> 
+                                <th class="colorCabecera">DNI</th> 
+                                <th class="colorCabecera">NUMERO</th> 
+                                <th class="colorCabecera">CARGO</th>
                             </tr>
+                            <?php
+                            
+                                $llenarsql="select t.ID_trab,t.nom_trab,t.ape_trab,t.correo,t.contra,t.dni_trab,t.numero_trab,t.cargo_trab from trabajadores t;";
+                                
+                               $busc= mysqli_query($con, $llenarsql);
+
+                            if($busc -> num_rows >0){
+                                while($mostrar= mysqli_fetch_array($busc)){
+
+                            ?>
                             <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
+                                <td><?php echo $mostrar['ID_trab']?></td>
+                                <td><?php echo $mostrar['nom_trab']?></td>
+                                <td><?php echo $mostrar['ape_trab']?></td>
+                                <td><?php echo $mostrar['correo']?></td>
+                                <td><?php echo $mostrar['contra']?></td>
+                                <td><?php echo $mostrar['dni_trab']?></td>
+                                <td><?php echo $mostrar['numero_trab']?></td>
+                                <td><?php echo $mostrar['cargo_trab']?></td>
                             </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
+                            <?php 
+                            }}
+                            ?>
                         </table>
                     </div>
                 </div>
-            </div>
-            <div class="col-div-8">
+            </div><br>
+            <div class="col-div-10">
                 <div class="box-8">
                     <div class="content-box">
                         <p>Últimos clientes registrados <span>Ver todo</span></p>
                         <br/>
                         <table>
                             <tr>
-                                <th>Company</th>
-                                <th>Contact</th>
-                                <th>Country</th>
+                                <td class="colorCabecera">ID</td>
+                                <td class="colorCabecera">NOMBRE</td>
+                                <td class="colorCabecera">APELLIDO</td>
+                                <td class="colorCabecera">CORREO</td> 
+                                <td class="colorCabecera">CONTRASEÑA</td> 
+                                <td class="colorCabecera">DNI</td> 
+                                <td class="colorCabecera">NUMERO</td> 
                             </tr>
+                            <?php
+                                $llenarsql="select c.ID_cli,c.nom_cli,c.ape_cli,c.correo,c.contra,c.DNI_cli,c.cell_cli from clientes c;";
+                                $busc= mysqli_query($con, $llenarsql);
+                            if($busc -> num_rows >0){
+                                while($mostrar= mysqli_fetch_array($busc)){
+                            ?>
                             <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
+                                <td><?php echo $mostrar['ID_cli']?></td>
+                                <td><?php echo $mostrar['nom_cli']?></td>
+                                <td><?php echo $mostrar['ape_cli']?></td>
+                                <td><?php echo $mostrar['correo']?></td>
+                                <td><?php echo $mostrar['contra']?></td>
+                                <td><?php echo $mostrar['DNI_cli']?></td>
+                                <td><?php echo $mostrar['cell_cli']?></td>
                             </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Alfreds</td>
-                                <td>Futterkiste</td>
-                            </tr>
+                            <?php
+                            }}
+                            ?>
                         </table>
                     </div>
                 </div>

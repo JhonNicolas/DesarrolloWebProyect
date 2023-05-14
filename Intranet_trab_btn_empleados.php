@@ -6,6 +6,7 @@ $con = fnConnect($msg);
 $user_Correo=$_SESSIONAD['correo'];
 $sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo='$user_Correo';";
 $respuesta = mysqli_query($con, $sql);
+$numeracion=0; //contador de registros
     while($data=$respuesta->fetch_assoc()){
         $idtrab = $data['ID_trab'];
         $codadmin = $data['COD_admin'];
@@ -27,6 +28,7 @@ $respuesta = mysqli_query($con, $sql);
         <title>Restaurante Pihuicho</title>    
         <link href="CSS-Intranet/EstiloDashboard.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body> 
         
@@ -62,7 +64,9 @@ $respuesta = mysqli_query($con, $sql);
         <main> 
             
             
-            
+        <div class="container-fluid">
+        <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>  
+        </div><br>
             
             
             <div class="col-div-12">
@@ -70,21 +74,28 @@ $respuesta = mysqli_query($con, $sql);
                     <div class="content-box">
                         <p>Empleados registrados <span>Ver todo</span></p>
                         <br/>
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apelldio</th>
-                                <th>Correo</th>
-                                <th>Contraseña</th>
-                                <th>DNI</th>
-                                <th>Número</th>
-                                <th>Cargo</th>
-                            </tr>
+                         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
+                            <thead>
+                                <tr>
+                                    <th class="colorCabecera">ID</th>
+                                    <th class="colorCabecera">NOMBRE</th>
+                                    <th class="colorCabecera">APELLIDO</th>
+                                    <th class="colorCabecera">CORREO</th> 
+                                    <th class="colorCabecera">CONTRASEÑA</th> 
+                                    <th class="colorCabecera">DNI</th> 
+                                    <th class="colorCabecera">NUMERO</th> 
+                                    <th class="colorCabecera">CARGO</th>
+                                </tr>
+                            </thead>  
                             <?php
-                                $llenarsql="select ID_trab,nom_trab,ape_trab,correo,contra,dni_trab,numero_trab,cargo_trab from trabajadores;";
-                                $result= mysqli_query($con, $llenarsql);
-                                while($mostrar= mysqli_fetch_array($result)){
+                            
+                                $llenarsql="select t.ID_trab,t.nom_trab,t.ape_trab,t.correo,t.contra,t.dni_trab,t.numero_trab,t.cargo_trab from trabajadores t;";
+                                
+                               $busc= mysqli_query($con, $llenarsql);
+
+                            if($busc -> num_rows >0){
+                                while($mostrar= mysqli_fetch_array($busc)){
+
                             ?>
                             <tr>
                                 <td><?php echo $mostrar['ID_trab']?></td>
@@ -97,16 +108,15 @@ $respuesta = mysqli_query($con, $sql);
                                 <td><?php echo $mostrar['cargo_trab']?></td>
                             </tr>
                             <?php 
-                                }
+                            }}
                             ?>
                         </table>
+                        
                     </div>
                 </div>
-            </div>            
-            
+        </div>            
+        <br><button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RTrabajador.php"><b>Registrar Trabajador</b></a> </button>  
             <div class="clearfix"></div>
-            
-        </div>
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script type="text/javascript">
@@ -138,6 +148,6 @@ $respuesta = mysqli_query($con, $sql);
                $("main").css('margin-left','300px');
             });
         </script>
-        
+        <script src="js/buscador.js" type="text/javascript"></script>
     </body>
 </html>

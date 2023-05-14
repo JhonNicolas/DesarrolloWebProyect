@@ -5,6 +5,7 @@ $con = fnConnect($msg);
 $user_Correo=$_SESSIONCLI['correo'];
 $sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo='$user_Correo';";
 $respuesta = mysqli_query($con, $sql);
+ $numeracion=0; //contador de registros
     while($data=$respuesta->fetch_assoc()){
         $idtrab = $data['ID_trab'];
         $codadmin = $data['COD_admin'];
@@ -59,37 +60,43 @@ $respuesta = mysqli_query($con, $sql);
             </div>
         </header>    
         <main>    
+        <div class="container-fluid">
+        <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Cliente"><br>  
+        </div><br>
+        
             <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">
                         <p>Clientes registrados <span>Ver todo</span></p>
-                        <br/>
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apelldio</th>
-                                <th>Correo</th>
-                                <th>Contraseña</th>
-                                <th>DNI</th>
-                                <th>Número</th>
-                            </tr>
+                        <table class="table table-dark table-striped table-hover table_id" id="tblClientes">
+                            <thead>
+                                <tr>
+                                    <td class="colorCabecera">ID</td>
+                                    <td class="colorCabecera">NOMBRE</td>
+                                    <td class="colorCabecera">APELLIDO</td>
+                                    <td class="colorCabecera">CORREO</td> 
+                                    <td class="colorCabecera">CONTRASEÑA</td> 
+                                    <td class="colorCabecera">DNI</td> 
+                                    <td class="colorCabecera">NUMERO</td> 
+                                </tr>
+                            </thead>  
                             <?php
-                                $llenarsql2="select ID_cli,nom_cli,ape_cli,correo,contra,DNI_cli,cell_cli from clientes;";
-                                $result2= mysqli_query($con, $llenarsql2);
-                                while($mostrar2= mysqli_fetch_array($result2)){
+                                $llenarsql="select c.ID_cli,c.nom_cli,c.ape_cli,c.correo,c.contra,c.DNI_cli,c.cell_cli from clientes c;";
+                                $busc= mysqli_query($con, $llenarsql);
+                            if($busc -> num_rows >0){
+                                while($mostrar= mysqli_fetch_array($busc)){
                             ?>
                             <tr>
-                                <td><?php echo $mostrar2['ID_cli']?></td>
-                                <td><?php echo $mostrar2['nom_cli']?></td>
-                                <td><?php echo $mostrar2['ape_cli']?></td>
-                                <td><?php echo $mostrar2['correo']?></td>
-                                <td><?php echo $mostrar2['contra']?></td>
-                                <td><?php echo $mostrar2['DNI_cli']?></td>
-                                <td><?php echo $mostrar2['cell_cli']?></td>
+                                <td><?php echo $mostrar['ID_cli']?></td>
+                                <td><?php echo $mostrar['nom_cli']?></td>
+                                <td><?php echo $mostrar['ape_cli']?></td>
+                                <td><?php echo $mostrar['correo']?></td>
+                                <td><?php echo $mostrar['contra']?></td>
+                                <td><?php echo $mostrar['DNI_cli']?></td>
+                                <td><?php echo $mostrar['cell_cli']?></td>
                             </tr>
                             <?php
-                                }
+                            }}
                             ?>
                         </table>
                     </div>
@@ -97,10 +104,10 @@ $respuesta = mysqli_query($con, $sql);
             </div>            
             
             <div class="clearfix"></div>
-            
-        </div>
+
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        
         <script type="text/javascript">
             $("main").css('margin-left','300px');
             $("main").css('transition','0.5s');
@@ -130,6 +137,6 @@ $respuesta = mysqli_query($con, $sql);
                $("main").css('margin-left','300px');
             });
         </script>
-        
+        <script src="js/buscador.js" type="text/javascript"></script>
     </body>
 </html>
