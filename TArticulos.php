@@ -154,8 +154,7 @@ $mensaje=null;
 ?>
 
 </table>       
-
-  
+    <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RArticulos.php"><b>Registrar Articulo</b></a> </button> 
   </body>
         <script src="js/buscador.js" type="text/javascript"></script>
 </html>

@@ -10,6 +10,8 @@
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
         
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+        
     </head>
     <body>
         <header>
@@ -57,7 +59,7 @@
                       <label>Categoria de Producto</label><br><br>
                       <select class="select-box" name="Cproducto">
                          <?php while ($row = mysqli_fetch_assoc($Listacp)) { ?>
-                                <option value="<?php echo $row["ID_cat"]?>">
+                                <option value="<?php echo $row["nombre_cat"]?>">
                                   <?php echo $row["nombre_cat"]?>  
                                 </option>                        
                        <?php } ?>
@@ -81,17 +83,19 @@
                       <label>Proveedor</label><br><br>
                       <select class="select-box" name="Proveedor">
                          <?php while ($row = mysqli_fetch_assoc($Listaprov)) { ?>
-                                <option value="<?php echo $row["idProv"]?>">
+                                <option value="<?php echo $row["nombreProv"]?>">
                                   <?php echo $row["nombreProv"]?>  
                                 </option>                        
                        <?php } ?>
                     </select>    
                   </div>  
                   <div class="boton-box">
-                      <input type="submit" name="enviar" value="Registrar Articulo" id="enviar">
+                      <input type="submit" name="enviar" value="Registrar Articulo" id="enviar"><br> 
                   </div>
                 </form>
+                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="TArticulos.php"><b>Ver Tabla</b></a> </button> 
             </div>
+            
         </main>   
         
         

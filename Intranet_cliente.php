@@ -2,16 +2,16 @@
 session_start();
 require "Conectar.php";
 $con = fnConnect($msg);
-$userCorreo=$_SESSION['correo_cli'];
-$sqlcliente="SELECT * FROM clientes where correo_cli='$userCorreo';";
+$userCorreo=$_SESSIONCLI['correo'];
+$sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
 $respu = mysqli_query($con, $sqlcliente);
     while($datos=$respu->fetch_assoc()){
         $idcli = $data['ID_cli'];
         $codadmin = $data['COD_admin'];
         $nombrecli = $data['nom_cli'];
         $apecli = $data['ape_cli'];
-        $correocli = $data['correo_cli'];
-        $contracli = $data['contra_cli'];
+        $correocli = $data['correo'];
+        $contracli = $data['contra'];
         $dnicli = $data['DNI_cli'];
         $numerocli = $data['cell_cli'];
     }
@@ -36,7 +36,7 @@ $respu = mysqli_query($con, $sqlcliente);
             <a href="Intranet_trab_btn_clientes.php" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
             <a href="#" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Tasks</a>
         </div>
-        <header   
+        <header>   
         <div id="main">
             <div class="head">
                 <div class="col-div-6">

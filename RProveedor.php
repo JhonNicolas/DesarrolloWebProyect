@@ -70,6 +70,7 @@
                       <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
                   </div>
                 </form>
+                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="TProveedores.php"><b>Ver Tabla</b></a> </button> 
             </div>
         </main>   
         

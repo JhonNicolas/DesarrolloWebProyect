@@ -2,16 +2,16 @@
 session_start();
 require "Conectar.php";
 $con = fnConnect($msg);
-$user_Correo=$_SESSION['correo_tra'];
-$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo_trab='$user_Correo';";
+$user_Correo=$_SESSIONAD['correo'];
+$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo='$user_Correo';";
 $respuesta = mysqli_query($con, $sql);
     while($data=$respuesta->fetch_assoc()){
         $idtrab = $data['ID_trab'];
         $codadmin = $data['COD_admin'];
         $nombretrab = $data['nom_trab'];
         $apetrab = $data['ape_trab'];
-        $correotrab = $data['correo_trab'];
-        $contratrab = $data['contra_trab'];
+        $correotrab = $data['correo'];
+        $contratrab = $data['contra'];
         $dnitrab = $data['dni_trab'];
         $numerotrab = $data['numero_trab'];
         $cargotrab = $data['cargo_trab'];

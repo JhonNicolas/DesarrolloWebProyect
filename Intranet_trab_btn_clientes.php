@@ -2,16 +2,16 @@
 session_start();
 require "Conectar.php";
 $con = fnConnect($msg);
-$user_Correo=$_SESSION['correo_tra'];
-$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo_trab='$user_Correo';";
+$user_Correo=$_SESSIONCLI['correo'];
+$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo='$user_Correo';";
 $respuesta = mysqli_query($con, $sql);
     while($data=$respuesta->fetch_assoc()){
         $idtrab = $data['ID_trab'];
         $codadmin = $data['COD_admin'];
         $nombretrab = $data['nom_trab'];
         $apetrab = $data['ape_trab'];
-        $correotrab = $data['correo_trab'];
-        $contratrab = $data['contra_trab'];
+        $correotrab = $data['correo'];
+        $contratrab = $data['contra'];
         $dnitrab = $data['dni_trab'];
         $numerotrab = $data['numero_trab'];
         $cargotrab = $data['cargo_trab'];
@@ -75,7 +75,7 @@ $respuesta = mysqli_query($con, $sql);
                                 <th>Número</th>
                             </tr>
                             <?php
-                                $llenarsql2="select ID_cli,nom_cli,ape_cli,correo_cli,contra_cli,DNI_cli,cell_cli from clientes;";
+                                $llenarsql2="select ID_cli,nom_cli,ape_cli,correo,contra,DNI_cli,cell_cli from clientes;";
                                 $result2= mysqli_query($con, $llenarsql2);
                                 while($mostrar2= mysqli_fetch_array($result2)){
                             ?>
@@ -83,8 +83,8 @@ $respuesta = mysqli_query($con, $sql);
                                 <td><?php echo $mostrar2['ID_cli']?></td>
                                 <td><?php echo $mostrar2['nom_cli']?></td>
                                 <td><?php echo $mostrar2['ape_cli']?></td>
-                                <td><?php echo $mostrar2['correo_cli']?></td>
-                                <td><?php echo $mostrar2['contra_cli']?></td>
+                                <td><?php echo $mostrar2['correo']?></td>
+                                <td><?php echo $mostrar2['contra']?></td>
                                 <td><?php echo $mostrar2['DNI_cli']?></td>
                                 <td><?php echo $mostrar2['cell_cli']?></td>
                             </tr>

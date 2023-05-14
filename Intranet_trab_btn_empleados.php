@@ -2,16 +2,17 @@
 session_start();
 require "Conectar.php";
 $con = fnConnect($msg);
-$user_Correo=$_SESSION['correo_tra'];
-$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo_trab='$user_Correo';";
+
+$user_Correo=$_SESSIONAD['correo'];
+$sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo='$user_Correo';";
 $respuesta = mysqli_query($con, $sql);
     while($data=$respuesta->fetch_assoc()){
         $idtrab = $data['ID_trab'];
         $codadmin = $data['COD_admin'];
         $nombretrab = $data['nom_trab'];
         $apetrab = $data['ape_trab'];
-        $correotrab = $data['correo_trab'];
-        $contratrab = $data['contra_trab'];
+        $correotrab = $data['correo'];
+        $contratrab = $data['contra'];
         $dnitrab = $data['dni_trab'];
         $numerotrab = $data['numero_trab'];
         $cargotrab = $data['cargo_trab'];
@@ -81,7 +82,7 @@ $respuesta = mysqli_query($con, $sql);
                                 <th>Cargo</th>
                             </tr>
                             <?php
-                                $llenarsql="select ID_trab,nom_trab,ape_trab,correo_trab,contra_trab,dni_trab,numero_trab,cargo_trab from trabajadores;";
+                                $llenarsql="select ID_trab,nom_trab,ape_trab,correo,contra,dni_trab,numero_trab,cargo_trab from trabajadores;";
                                 $result= mysqli_query($con, $llenarsql);
                                 while($mostrar= mysqli_fetch_array($result)){
                             ?>
@@ -89,8 +90,8 @@ $respuesta = mysqli_query($con, $sql);
                                 <td><?php echo $mostrar['ID_trab']?></td>
                                 <td><?php echo $mostrar['nom_trab']?></td>
                                 <td><?php echo $mostrar['ape_trab']?></td>
-                                <td><?php echo $mostrar['correo_trab']?></td>
-                                <td><?php echo $mostrar['contra_trab']?></td>
+                                <td><?php echo $mostrar['correo']?></td>
+                                <td><?php echo $mostrar['contra']?></td>
                                 <td><?php echo $mostrar['dni_trab']?></td>
                                 <td><?php echo $mostrar['numero_trab']?></td>
                                 <td><?php echo $mostrar['cargo_trab']?></td>

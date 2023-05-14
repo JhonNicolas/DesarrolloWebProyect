@@ -150,7 +150,7 @@ $mensaje=null;
 ?>
 
 </table>       
-        <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RArticulos.php"><b>Registrar Proveedor</b></a> </button> 
+        <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RProveedor.php"><b>Registrar Proveedor</b></a> </button> 
   </body>
   <script src="js/buscador.js" type="text/javascript"></script>
 </html>

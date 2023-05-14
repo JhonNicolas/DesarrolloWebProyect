@@ -55,11 +55,11 @@
                     <label>Apellido</label>
                   </div>  
                    <div class="user-box">
-                    <input type="text" name="correo_cli" required="">
+                    <input type="text" name="correo" required="">
                     <label>Correo</label>
                   </div> 
                   <div class="user-box">
-                    <input type="password" name="contra_cli" required="">
+                    <input type="password" name="contra" required="">
                     <label>Contraseña</label>
                   </div>
                   <div class="user-box">

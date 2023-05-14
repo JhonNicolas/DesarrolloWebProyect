@@ -1,7 +1,7 @@
 <?php
 require "Conectar.php";
 $con = fnConnect($msg);
-$sql = "select t.nom_trab, t.ape_trab, t.correo_trab,t.contra_trab,
+$sql = "select t.nom_trab, t.ape_trab, t.correo,t.contra,
     t.dni_trab, t.numero_trab, t.cargo_trab from trabajadores t;";
 $lista= mysqli_query($con, $sql);
 
@@ -15,8 +15,8 @@ $mensaje=null;
         //capturando datos
         $reg["nom_trab"] = $_POST["nom_trab"];
         $reg["ape_trab"] = $_POST["ape_trab"];
-        $reg["correo_trab"] = $_POST["correo_trab"];
-        $reg["contra_trab"] = $_POST["contra_trab"];
+        $reg["correo"] = $_POST["correo"];
+        $reg["contra"] = $_POST["contra"];
         $reg["dni_trab"] = $_POST["dni_trab"];
         $reg["numero_trab"] = $_POST["numero_trab"];
         $reg["cargo_trab"] = $_POST["cargo_trab"];
@@ -25,9 +25,9 @@ $mensaje=null;
     function InsertarTrabajador($reg, &$mensaje, &$error){
         $con = fnConnect($msg);
         mysqli_query($con, "start transaction");
-        $sqlinsert = "insert into trabajadores(nom_trab, ape_trab, correo_trab, contra_trab, dni_trab,numero_trab,cargo_trab)
+        $sqlinsert = "insert into trabajadores(nom_trab, ape_trab, correo, contra, dni_trab,numero_trab,cargo_trab)
                 values('{$reg["nom_trab"]}','{$reg["ape_trab"]}',
-                '{$reg["correo_trab"]}','{$reg["contra_trab"]}',{$reg["dni_trab"]},{$reg["numero_trab"]},'{$reg["cargo_trab"]}');";
+                '{$reg["correo"]}','{$reg["contra"]}',{$reg["dni_trab"]},{$reg["numero_trab"]},'{$reg["cargo_trab"]}');";
                  //ejecutamos la consulta
         $respuesta = mysqli_query($con, $sqlinsert);
         if($respuesta==0){

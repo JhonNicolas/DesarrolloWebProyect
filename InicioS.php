@@ -43,14 +43,14 @@
         <main>
             <div class="login-box">
                 <h2>Inicio de sesión</h2>   
-                <?php include 'Controlador/Ctrl_Login_cliente.php'; ?> 
+                <?php include 'Controlador/Ctrl_Login.php'; ?> 
                 <form action="#" method="POST"> 
                    <div class="user-box">
-                    <input type="email" name="correo_cli" required="">
+                    <input type="email" name="correo" required="">
                     <label>Correo</label>
                   </div> 
                   <div class="user-box">
-                    <input type="password" name="contra_cli" required="">
+                    <input type="password" name="contra" required="">
                     <label>Contraseña</label>
                   </div>
                   <div class="boton-box">

@@ -54,11 +54,11 @@
                     <label>Apellido</label>
                   </div>  
                    <div class="user-box">
-                    <input type="text" name="correo_trab" required="">
+                    <input type="text" name="correo" required="">
                     <label>Correo</label>
                   </div> 
                   <div class="user-box">
-                    <input type="password" name="contra_trab" required="">
+                    <input type="password" name="contra" required="">
                     <label>Contraseña</label>
                   </div>
                   <div class="user-box">
@@ -73,7 +73,7 @@
                       <label>Cargo</label><br><br>
                       <select class="select-box" name="cargo_trab">
                          <?php while ($row = mysqli_fetch_assoc($Listacar)) { ?>
-                                <option value="<?php echo $row["ID_cargo"]?>">
+                                <option value="<?php echo $row["nombre_cargo"]?>">
                                   <?php echo $row["nombre_cargo"]?>  
                                 </option>                        
                        <?php } ?>
@@ -84,7 +84,9 @@
                       <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
                   </div>
                 </form>
+                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="TTrabajadores.php"><b>Ver Tabla</b></a> </button> 
             </div>
+            
         </main>   
         
         
