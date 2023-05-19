@@ -9,9 +9,7 @@
               crossorigin="anonymous">
         <link href="CSS/conta.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -36,14 +34,7 @@
             <div class="logo">
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
             </div>
-            
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
-            
+                        
             <div class="info-header">
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>

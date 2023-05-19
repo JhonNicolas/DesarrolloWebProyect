@@ -24,16 +24,6 @@ h1 {
     border-radius: 20px 20px 0px 0px;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15%;
-    height: 70px;
-
-    width: 100%;
-}
-
 .contenedor {
     display: flex;
     justify-content: space-between;

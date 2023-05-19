@@ -10,7 +10,6 @@
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" >
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header>
@@ -25,26 +24,17 @@
                     <li><a href="CCarta.php"><i class="fas fa-qrcode"></i>Carta</a></li>
                     <li><a href="CBebidas.php"><i class="fas fa-qrcode"></i>Bebidas</a></li>
                     <li><a href="CPlatosT.php"><i class="fas fa-qrcode"></i>Platos Tipicos</a></li>
-                    <li><a href="CPromociones.php"><i class="fas fa-qrcode"></i>Promociones</a></li>
                 </ul>
             </div>
             
             <div class="logo">
                 <a href=MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
             </div>
-            
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
-            
+                        
             <div class="info-header">
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
                     <a href="Proveedores.php">Proveedores</a>
-                    <a href="CPromociones.php">Promociones</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
             </div> 

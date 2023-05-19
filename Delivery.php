@@ -8,7 +8,6 @@
         <link href="CSS-Main-Principal/EstiloMenuPrincipal.css" rel="stylesheet">
         <link href="CSS-Main-Principal/EstiloMasVendidos.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet">
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet">
         <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet">
         <link href="CSS/EstiloDeli.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -33,13 +32,6 @@
             
             <div class="logo">
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
-            </div>
-            
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
             </div>
             
             <div class="info-header">

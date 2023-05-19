@@ -39,7 +39,7 @@ if(($_SESSION['correo'])!=''){
             <a href="#" data-target="#Proveedores" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Proveedores</a>
             <a href="#" data-target="#Articulos" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Articulos</a>
             <a href="#" data-target="#Clientes" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
-            <a href="#" data-target='#RProductos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Registro producto</a>
+            <a href="#" data-target='#RProductos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Registro Platos</a>
             <a href="Controlador/Ctrl_CerrarSesion.php" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Cerrar sesión</a>
             
         </div>
@@ -356,7 +356,7 @@ if(($_SESSION['correo'])!=''){
                 <div class="clearfix"></div>
             </div>
             
-            <div data-content id="rproductos">
+       <div data-content id="rproductos">
                 <header id="header">
         <h1>REGISTRO PLATO</h1>
     </header>
@@ -424,7 +424,7 @@ if(($_SESSION['correo'])!=''){
 
         <!-- Productos -->
         <div class="contenedorProductos">
-            <h2>Productos</h2>
+            <h2>Platos</h2>
             <div class="mostrarProductos" id="mostrarProductos">
                 
             </div>
@@ -432,7 +432,7 @@ if(($_SESSION['correo'])!=''){
         </div>
             
         </main>
-        <script src="js/RegAdPlat.js" type="text/javascript"></script>
+        <script src="js/RegAdPlato.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script type="text/javascript">
             $("main").css('margin-left','300px');

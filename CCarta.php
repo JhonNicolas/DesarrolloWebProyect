@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="CSS/StyleCli.css" rel="stylesheet" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    
+    <link href="CSS/StyleCli.css" rel="stylesheet" type="text/css"/>
     
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>
@@ -24,8 +23,7 @@
         <link href="CSS/Catalogo/EstiloC.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        
-        <link href="CSS-Header/EstiloHeader.css" rel="stylesheet">
+        <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"><!-- comment -->
         
@@ -85,8 +83,7 @@
     
 
     <div id="contenedor" class="contenedor"> </div>
-    
-    <script src="js/VistCliPLat.js" type="text/javascript"></script>
+    <script src="js/VistCliPLato.js" type="text/javascript"></script>
     <footer class="footer">
             <div class="container-f">
                 <div class="footer-row">

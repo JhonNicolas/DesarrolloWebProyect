@@ -8,7 +8,6 @@
         <link href="CSS-Main-Principal/EstiloMenuPrincipal.css" rel="stylesheet">
         <link href="CSS-Main-Principal/EstiloMVendidos.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet">
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet">
         <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
         
@@ -26,26 +25,17 @@
                     <li><a href="CCarta.php"><i class="fas fa-qrcode"></i>Carta</a></li>
                     <li><a href="CBebidas.php"><i class="fas fa-qrcode"></i>Bebidas</a></li>
                     <li><a href="CPlatosT.php"><i class="fas fa-qrcode"></i>Platos Tipicos</a></li>
-                    <li><a href="CPromociones.php"><i class="fas fa-qrcode"></i>Promociones</a></li>
                 </ul>
             </div>
             
             <div class="logo">
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
             </div>
-            
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
-            
+                        
             <div class="info-header">
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
                     <a href="Proveedores.php">Proveedores</a>
-                    <a href="CPromociones.php">Promociones</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
             </div>            
@@ -73,7 +63,6 @@
                                 <li><a href="CCarta.php">Carta</a></li>
                                 <li><a href="CBebidas.php">Bebidas</a></li>
                                 <li><a href="CPlatosT.php">Platos Tipicos</a></li>
-                                <li><a href="CPromociones.php">Promociones</a></li>
                             </ul>
                         </li>
                         <li><a href="Contacto.php">Contacto</a></li>

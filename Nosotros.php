@@ -10,7 +10,6 @@
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" >
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header>
@@ -31,13 +30,6 @@
             
             <div class="logo">
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
-            </div>
-            
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
             </div>
             
             <div class="info-header">
