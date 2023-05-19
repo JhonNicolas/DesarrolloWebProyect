@@ -2,20 +2,21 @@
 session_start();
 require "Conectar.php";
 $con = fnConnect($msg);
-$userCorreo=$_SESSIONCLI['correo'];
+$userCorreo=$_SESSION['correo'];
 $sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
 $numeracion=0; //contador de registros
 $respu = mysqli_query($con, $sqlcliente);
     while($datos=$respu->fetch_assoc()){
-        $idcli = $data['ID_cli'];
-        $codadmin = $data['COD_admin'];
-        $nombrecli = $data['nom_cli'];
-        $apecli = $data['ape_cli'];
-        $correocli = $data['correo'];
-        $contracli = $data['contra'];
-        $dnicli = $data['DNI_cli'];
-        $numerocli = $data['cell_cli'];
+        $idcli = $datos['ID_cli'];
+        $codadmin = $datos['COD_admin'];
+        $nombrecli = $datos['nom_cli'];
+        $apecli = $datos['ape_cli'];
+        $correocli = $datos['correo'];
+        $contracli = $datos['contra'];
+        $dnicli = $datos['DNI_cli'];
+        $numerocli = $datos['cell_cli'];
     }
+if(($_SESSION['correo'])!=''){    
 ?>
 <html>
     <head>
@@ -29,13 +30,13 @@ $respu = mysqli_query($con, $sqlcliente);
         
         <div id="mySidenav" class="sidenav">
             <p class="logo"><span>R</span>-Pihuicho</p>
-            <a href="Intranet_trabajador.php" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;Principal</a>
+            <a href="Intranet_cliente.php" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;Principal</a>
             <a href="Intranet_trab_btn_empleados.php" class="icon-a"><i class="fa fa-users icons"></i>&nbsp;&nbsp;Empleados</a>
             <a href="Intranet_trab_btn_proveedores.php" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Proveedores</a>
             <a href="Intranet_trab_btn_articulos.php" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Articulos</a>
             <a href="Intranet_trab_btn_clientes.php" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
             <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Orders</a>
-            <a href="#" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Tasks</a>
+            <a href="Controlador/Ctrl_CerrarSesion.php" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
         <header>   
         <div id="main">
@@ -59,7 +60,7 @@ $respu = mysqli_query($con, $sqlcliente);
         <main>    
             <div class="col-div-3">
                 <div class="box">
-                    <p>67<br/><span>Customers</span></p>
+                    <p>67<br/><span>Trabajadores</span></p>
                     <i class="fa fa-users box-icon"></i>
                 </div>
             </div>
@@ -223,3 +224,8 @@ $respu = mysqli_query($con, $sqlcliente);
         
     </body>
 </html>
+<?php 
+    }else {
+        header("location:InicioS.php");
+    }
+?>

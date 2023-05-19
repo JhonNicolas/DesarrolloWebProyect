@@ -141,6 +141,7 @@ main{
     background-color: #ddd;
     padding: 3px 10px;
     font-size: 15px;
+    cursor: pointer;
 }
 .box-8, .box-4{
     width: 96.5%;
@@ -242,3 +243,10 @@ td, th{
         flex-direction: column;
     } 
 }
+[data-content]{
+    display: none;
+}
+.active[data-content]{
+    display: block;
+}
+

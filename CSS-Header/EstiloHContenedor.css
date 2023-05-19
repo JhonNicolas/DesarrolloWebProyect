@@ -9,7 +9,7 @@ a{
 }
 header{
     display: flex;
-    min-height: 70px;
+    min-height: 100px;
     background-color: #0AC871;
     justify-content: space-between;
     align-items: center;

@@ -1,25 +1,39 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/StyleCli.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    
+    
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>
+        <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloC.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         
-        <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Header/EstiloBotonSearch.css" rel="stylesheet">
+        <link href="CSS-Header/EstiloHeader.css" rel="stylesheet">
         <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"><!-- comment -->
         
-    </head>
-    <body>
-        
-        <header>
-            
-            <input type="checkbox" id="check"> 
+</head>
+
+<body>
+    <header id="header">
+       <input type="checkbox" id="check"> 
             <label for="check">
                 <i class="fas fa-bars" id="btn"></i>
                 <i class="fas fa-times" id="cancel"></i>
@@ -29,8 +43,7 @@
                 <ul>
                     <li><a href="CCarta.php"><i class="fas fa-qrcode"></i>Carta</a></li>
                     <li><a href="CBebidas.php"><i class="fas fa-qrcode"></i>Bebidas</a></li>
-                    <li><a href="CPlatosT.php"><i class="fas fa-qrcode"></i>Platos Tipicos</a></li>
-                    <li><a href="CPromociones.php"><i class="fas fa-qrcode"></i>Promociones</a></li>
+                    <li><a href="CPlatosT.php"><i class="fas fa-qrcode"></i>Platos Tipicos</a></li>   
                 </ul>
             </div>
             
@@ -38,27 +51,18 @@
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
             </div>
             
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
-            
+                        
             <div class="info-header">
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
                     <a href="Proveedores.php">Proveedores</a>
-                    <a href="CPromociones.php">Promociones</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
             </div> 
-            
-        </header>  
         
-        <main>
-            
-            <div class="Barra-main">
+    </header>
+    
+    <div class="Barra-main">
                 <nav>
                     <ul class="menu-horizontal">
                         <li><a href="Menu.php">Inicio</a></li>
@@ -69,170 +73,21 @@
                                 <li><a href="CCarta.php">Carta</a></li>
                                 <li><a href="CBebidas.php">Bebidas</a></li>
                                 <li><a href="CPlatosT.php">Platos Tipicos</a></li>
-                                <li><a href="CPromociones.php">Promociones</a></li>
                             </ul>
                         </li>
                         <li><a href="Contacto.php">Contacto</a></li>
                     </ul>
                 </nav> 
-            </div>   
-            
-            <div class="container">
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/0.jpg" />
-                    </figure>
-                    <div class="contenido">
-                        <h3>Caldo de Gallina</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/1.jpg" />
-                    </figure>
-                    <div class="contenido">
-                        <h3>Caldo de Gallina</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/2.jpg" />
-                    </figure>
-                    <div class="contenido">
-                        <h3>Tacacho con Cecina</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                       <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
+            </div>  
+    
+    
+    <br><br>
+    
 
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/221.jpg" />
-                    </figure>
-                    <div class="contenido">
-                        <h3>Arroz con Pescado</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/3.jpg" />
-                    </figure>
-                    <div class="contenido">
-                        <h3>Combinado</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                </div>
-
-            <div class="container">
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/5.jpg"/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Ceviche</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/6.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Ceviche</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/Caldo.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Caldo de Gallina</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir Caldo de Gallina">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/Chicharron.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Chicharron de pota</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/Parihuela.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Chupe de Camarones</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/causa.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Trio Marino</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CCarta/tacacho.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Tacacho con Cecina</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-        
-        <footer class="footer">
+    <div id="contenedor" class="contenedor"> </div>
+    
+    <script src="js/VistCliPLat.js" type="text/javascript"></script>
+    <footer class="footer">
             <div class="container-f">
                 <div class="footer-row">
                     <div class="footer-links">
@@ -270,6 +125,10 @@
                 </div>
             </div>
         </footer>
-    </body>
+        
+    
+    
+</body>
+
 </html>
 

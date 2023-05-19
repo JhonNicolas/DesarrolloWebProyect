@@ -73,7 +73,7 @@
                       <label>Cargo</label><br><br>
                       <select class="select-box" name="cargo_trab">
                          <?php while ($row = mysqli_fetch_assoc($Listacar)) { ?>
-                                <option value="<?php echo $row["nombre_cargo"]?>">
+                                <option value="<?php echo $row["ID_cargo"]?>">
                                   <?php echo $row["nombre_cargo"]?>  
                                 </option>                        
                        <?php } ?>
