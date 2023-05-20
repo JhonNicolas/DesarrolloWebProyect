@@ -28,7 +28,7 @@ if(($_SESSION['correo'])!=''){
         <title>Restaurante Pihuicho</title>    
         <link href="CSS-Intranet/EstiloDashboard.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="CSS/StyleAdProduc.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/StyleAdProduct.css" rel="stylesheet" type="text/css"/>
     </head>
     <body> 
         
@@ -357,78 +357,74 @@ if(($_SESSION['correo'])!=''){
             </div>
             
        <div data-content id="rproductos">
-                <header id="header">
-        <h1>REGISTRO PLATO</h1>
-    </header>
+            <h1>REGISTRO PLATO</h1>
+            <div class="contenedor">
+                <!-- Añadir -->
+                <div class="añadir">
+                    <h2>Añadir</h2>
+                    <form>
+                        <label>Nombre del producto</label>
+                        <input type="text" id="productoAñadir" name="nombreDelProducto">
 
-    <main>
-        <div class="contenedor">
-            <!-- Añadir -->
-            <div class="añadir">
-                <h2>Añadir</h2>
-                <form>
-                    <label>Nombre del producto</label>
-                    <input type="text" id="productoAñadir" name="nombreDelProducto">
+                        <label>Valor del producto</label>
+                        <input type="number" id="valorAñadir">
 
-                    <label>Valor del producto</label>
-                    <input type="number" id="valorAñadir">
+                        <label>Existencia</label>
+                        <input type="number" id="existenciaAñadir">
 
-                    <label>Existencia</label>
-                    <input type="number" id="existenciaAñadir">
+                        <label>Url Imagen</label>
+                        <input type="text" id="ImagenAñadir">
 
-                    <label>Url Imagen</label>
-                    <input type="text" id="ImagenAñadir">
+                        <input class="button" type="button" id="botonAñadir" value="Añadir">
+                    </form>
+                </div>
+                <!-- Editar -->
+                <div class="editar">
+                    <h2>Editar</h2>
+                    <form>
+                        <label>Nombre del producto</label>
+                        <select id="productoEditar">
+                            <option value="">---</option>
+                        </select>
 
-                    <input class="button" type="button" id="botonAñadir" value="Añadir">
-                </form>
+                        <label>Atributo</label>
+                        <select id="atributoEditar">
+                            <option value="">---</option>
+                        </select>
+
+                        <label>Nuevo valor</label>
+                        <input type="text" id="nuevoAtributo">
+
+                        <input class="button" type="button" id="botonEditar" value="Editar">
+                    </form>
+                </div>
+
+                <!-- Eliminar -->
+                <div class="eliminar">
+                    <h2>Eliminar</h2>
+
+                    <form>
+                        <label>Nombre del producto</label>
+                        <select id="productoEliminar">
+                            <option value="">---</option>
+                        </select>
+                        <input class="button" type="button" id="botonEliminar" value="Eliminar">
+                    </form>
+                </div>
             </div>
-            <!-- Editar -->
-            <div class="editar">
-                <h2>Editar</h2>
-                <form>
-                    <label>Nombre del producto</label>
-                    <select id="productoEditar">
-                        <option value="">---</option>
-                    </select>
 
-                    <label>Atributo</label>
-                    <select id="atributoEditar">
-                        <option value="">---</option>
-                    </select>
-
-                    <label>Nuevo valor</label>
-                    <input type="text" id="nuevoAtributo">
-
-                    <input class="button" type="button" id="botonEditar" value="Editar">
-                </form>
+            <!-- Mostrar el mensaje -->
+            <div class="contenedorMensaje">
+                <div id="mensaje"></div>
             </div>
 
-            <!-- Eliminar -->
-            <div class="eliminar">
-                <h2>Eliminar</h2>
+            <!-- Productos -->
+            <div class="contenedorProductos">
+                <h2>Platos</h2>
+                <div class="mostrarProductos" id="mostrarProductos">
 
-                <form>
-                    <label>Nombre del producto</label>
-                    <select id="productoEliminar">
-                        <option value="">---</option>
-                    </select>
-                    <input class="button" type="button" id="botonEliminar" value="Eliminar">
-                </form>
+                </div>
             </div>
-        </div>
-
-        <!-- Mostrar el mensaje -->
-        <div class="contenedorMensaje">
-            <div id="mensaje"></div>
-        </div>
-
-        <!-- Productos -->
-        <div class="contenedorProductos">
-            <h2>Platos</h2>
-            <div class="mostrarProductos" id="mostrarProductos">
-                
-            </div>
-        </div>
         </div>
             
         </main>
