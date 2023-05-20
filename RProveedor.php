@@ -1,10 +1,8 @@
-
 <html>
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>
-        <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Login/EstiloLogin2.css" rel="stylesheet">
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
@@ -42,36 +40,40 @@
         </header> 
        
         <main>
-            <div class="login-box">
-                <h2>Registro Proveedor</h2>
-                <?php include 'Controlador/Ctrl_RProveedores.php';?>
-                <form action="#" method="POST">
-                  <div class="user-box">
-                    <input type="text" name="nombreProv" required="">
-                    <label>Nombre</label>
-                  </div>
-                   <div class="user-box">
-                    <input type="text" name="correo" required="">
-                    <label>Correo</label>
-                  </div> 
-                  <div class="user-box">
-                    <input type="text" name="RUC" required="">
-                    <label>RUC</label>
-                  </div> 
-                  <div class="user-box">
-                    <input type="text" name="telefono" required="">
-                    <label>Numero</label>
-                  </div>
-                  <div class="user-box">
-                    <input type="text" name="direccion" required="">
-                    <label>Direccion</label>
-                  </div>
-                  <div class="boton-box">
-                      <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
-                  </div>
-                </form>
-                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="TProveedores.php"><b>Ver Tabla</b></a> </button> 
-            </div>
+            <div class="contenedor-proveedor">
+                <div class="login-box">
+                    <h2>Registro Proveedor</h2>
+                    <?php include 'Controlador/Ctrl_RProveedores.php';?>
+                    <form action="#" method="POST">
+                      <div class="user-box">
+                        <input type="text" name="nombreProv" required="">
+                        <label>Nombre</label>
+                      </div>
+                       <div class="user-box">
+                        <input type="text" name="correo" required="">
+                        <label>Correo</label>
+                      </div> 
+                      <div class="user-box">
+                        <input type="text" name="RUC" required="">
+                        <label>RUC</label>
+                      </div> 
+                      <div class="user-box">
+                        <input type="text" name="telefono" required="">
+                        <label>Numero</label>
+                      </div>
+                      <div class="user-box">
+                        <input type="text" name="direccion" required="">
+                        <label>Direccion</label>
+                      </div>
+                      <div class="boton-box">
+                          <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
+                      </div>
+                    </form>
+                    <div class="boton-outline-info">
+                          <a href="TProveedores.php">Ver Tabla</a>
+                    </div>
+                </div>
+            </div>    
         </main>   
         
         

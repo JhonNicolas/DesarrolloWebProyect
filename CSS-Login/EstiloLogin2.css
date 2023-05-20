@@ -1,16 +1,24 @@
-html {
-  height: 100%;
-}
 body {
   margin:0;
   padding:0;
   font-family: sans-serif;
   background: linear-gradient(black, #51CDA5);
 }
-
+.contenedor-empleado{
+    height: 145vh;
+}
+.contenedor-empleado .login-box{
+    top: 90%;
+}
+.contenedor-proveedor{
+    height: 115vh;
+}
+.contenedor-proveedor .login-box{
+    top: 75%;
+}
 .login-box {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   width: 400px;
   padding: 40px;
@@ -88,8 +96,23 @@ body {
   border: none;
   background: transparent;
 }
+.login-box .boton-outline-info a{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  border: none;
+  background: transparent; 
+}
 
-.login-box .boton-box input:hover{
+.login-box .boton-box input:hover,
+.login-box .boton-outline-info a:hover{
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
@@ -107,4 +130,41 @@ body {
     color:green;
     text-align: center;
     margin-bottom: 10px;
+}
+.login-box label{
+    color: white;
+}
+.contenedor-select{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 250px;
+    height: 50px;
+    margin-top: 10px;
+}
+.elegir-box{
+    border:none;
+    appearance: none;
+    padding: 0 30px 0 15px;
+    width: 100%;
+    color: white;
+    background-color: #3ce071;
+    font-size: 16.5px;
+}
+.contenedor-select .icon-contenedor{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0faa3a;
+}
+.icon-contenedor {
+    pointer-events: none;
+}
+.icon-contenedor i{
+    font-size: 30px;
+    color: white;
 }

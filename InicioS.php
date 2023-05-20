@@ -3,7 +3,6 @@
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>
-        <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Login/EstiloLogin2.css" rel="stylesheet">
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
@@ -41,23 +40,25 @@
         </header> 
         
         <main>
-            <div class="login-box">
-                <h2>Inicio de sesión</h2>   
-                <?php include 'Controlador/Ctrl_Login.php'; ?> 
-                <form action="#" method="POST"> 
-                   <div class="user-box">
-                    <input type="email" name="correo" required="">
-                    <label>Correo</label>
-                  </div> 
-                  <div class="user-box">
-                    <input type="password" name="contra" required="">
-                    <label>Contraseña</label>
-                  </div>
-                  <div class="boton-box">
-                      <input type="submit" name="enviar" value="Iniciar sesion">
-                  </div>  
-                </form>
-            </div>
+            <div class="contenedor-login">
+                <div class="login-box">
+                    <h2>Inicio de sesión</h2>   
+                    <?php include 'Controlador/Ctrl_Login.php'; ?> 
+                    <form action="#" method="POST"> 
+                       <div class="user-box">
+                        <input type="email" name="correo" required="">
+                        <label>Correo</label>
+                      </div> 
+                      <div class="user-box">
+                        <input type="password" name="contra" required="">
+                        <label>Contraseña</label>
+                      </div>
+                      <div class="boton-box">
+                          <input type="submit" name="enviar" value="Iniciar sesion">
+                      </div>  
+                    </form>
+                </div>
+            </div>    
         </main>   
     </body>
 </html>

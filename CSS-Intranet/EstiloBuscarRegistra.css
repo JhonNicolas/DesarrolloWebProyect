@@ -1,0 +1,69 @@
+.contenedor-botones{
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-botones .boton-box{
+    margin: 0 0 0 5%;
+}
+.contenedor-botones .boton-box2 input{
+ position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  background-color: #26314a;
+}
+
+.contenedor-botones .boton-box a{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  letter-spacing: 4px;
+  background-color: #26314a;
+}
+
+.contenedor-botones .boton-box2 input:hover,
+.contenedor-botones .boton-box a:hover
+{
+  background: #4b6ab0;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #4b6ab0,
+              0 0 25px #4b6ab0,
+              0 0 50px #4b6ab0,
+              0 0 100px #4b6ab0;
+}
+@media(max-width:970px){
+    .contenedor-botones{
+        flex-direction: column;
+        align-items: center;
+    }
+    .col-div-12{
+        margin-top: 40px;
+    }
+    .contenedor-botones{
+    padding: 0;
+    height: 20%;
+    display: flex;
+    }
+    .contenedor-botones .boton-box{
+    margin: 0;
+    }
+}
+

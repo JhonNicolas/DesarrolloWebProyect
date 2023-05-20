@@ -41,56 +41,61 @@
         </header> 
        
         <main>
-            <div class="login-box">
-                <h2>Registro Trabajador</h2>
-                <?php include 'Controlador/Ctrl_RTrabajador.php';?>
-                <form action="#" method="POST">
-                  <div class="user-box">
-                    <input type="text" name="nom_trab" required="">
-                    <label>Nombre</label>
-                  </div>
-                  <div class="user-box">
-                    <input type="text" name="ape_trab" required="">
-                    <label>Apellido</label>
-                  </div>  
-                   <div class="user-box">
-                    <input type="text" name="correo" required="">
-                    <label>Correo</label>
-                  </div> 
-                  <div class="user-box">
-                    <input type="password" name="contra" required="">
-                    <label>Contraseña</label>
-                  </div>
-                  <div class="user-box">
-                    <input type="text" name="dni_trab" required="">
-                    <label>DNI</label>
-                  </div> 
-                  <div class="user-box">
-                    <input type="text" name="numero_trab" required="">
-                    <label>Numero</label>
-                  </div>
-                  <div class="user-box">
-                      <label>Cargo</label><br><br>
-                      <select class="select-box" name="cargo_trab">
-                         <?php while ($row = mysqli_fetch_assoc($Listacar)) { ?>
-                                <option value="<?php echo $row["ID_cargo"]?>">
-                                  <?php echo $row["nombre_cargo"]?>  
-                                </option>                        
-                       <?php } ?>
-                    </select>
-                        
-                  </div>  
-                  <div class="boton-box">
-                      <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
-                  </div>
-                </form>
-                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="TTrabajadores.php"><b>Ver Tabla</b></a> </button> 
-            </div>
-            
+            <div class="contenedor-empleado">
+                <div class="login-box">
+                    <h2>Registro Trabajador</h2>
+                    <?php include 'Controlador/Ctrl_RTrabajador.php';?>
+                    <form action="#" method="POST">
+                      <div class="user-box">
+                        <input type="text" name="nom_trab" required="">
+                        <label>Nombre</label>
+                      </div>
+                      <div class="user-box">
+                        <input type="text" name="ape_trab" required="">
+                        <label>Apellido</label>
+                      </div>  
+                       <div class="user-box">
+                        <input type="text" name="correo" required="">
+                        <label>Correo</label>
+                      </div> 
+                      <div class="user-box">
+                        <input type="password" name="contra" required="">
+                        <label>Contraseña</label>
+                      </div>
+                      <div class="user-box">
+                        <input type="text" name="dni_trab" required="">
+                        <label>DNI</label>
+                      </div> 
+                      <div class="user-box">
+                        <input type="text" name="numero_trab" required="">
+                        <label>Numero</label>
+                      </div>
+
+                      <label>Cargo</label>  
+                      <div class="contenedor-select">
+                          <select class="elegir-box" name="cargo_trab">
+                             <?php while ($row = mysqli_fetch_assoc($Listacar)) { ?>
+                                    <option value="<?php echo $row["ID_cargo"]?>">
+                                      <?php echo $row["nombre_cargo"]?>  
+                                    </option>                        
+                                <?php } ?>
+                          </select> 
+                          <div class="icon-contenedor">
+                              <i class="fa-solid fa-caret-down"></i>
+                          </div>
+                      </div>  
+
+                      <div class="boton-box">
+                          <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
+                      </div>
+                    </form>
+                    <div class="boton-outline-info">
+                          <a href="TTrabajadores.php">Ver Tabla</a>
+                    </div>
+                </div>
+            </div>    
         </main>   
-        
-        
-        
+          
     </body>
 </html>
 

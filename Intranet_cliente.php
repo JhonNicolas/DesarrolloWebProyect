@@ -30,12 +30,11 @@ if(($_SESSION['correo'])!=''){
         
         <div id="mySidenav" class="sidenav">
             <p class="logo"><span>R</span>-Pihuicho</p>
-            <a href="Intranet_cliente.php" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;Principal</a>
-            <a href="Intranet_trab_btn_empleados.php" class="icon-a"><i class="fa fa-users icons"></i>&nbsp;&nbsp;Empleados</a>
-            <a href="Intranet_trab_btn_proveedores.php" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Proveedores</a>
-            <a href="Intranet_trab_btn_articulos.php" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Articulos</a>
-            <a href="Intranet_trab_btn_clientes.php" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
-            <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Orders</a>
+            <a href="#" data-target="#Principal" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;Principal</a>
+            <a href="#" data-target="#Proveedores" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Pedidos</a>
+            <a href="#" data-target="#Articulos" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Platos</a>
+            <a href="#" data-target="#Clientes" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Datos de cuenta</a>
+            <a href="#" data-target='#RProductos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Proximamente</a>
             <a href="Controlador/Ctrl_CerrarSesion.php" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
         <header>   
@@ -56,8 +55,10 @@ if(($_SESSION['correo'])!=''){
                  </div>
                 <div class="clearfix"></div>
             </div>
+        </div>    
         </header>    
-        <main>    
+        <main>  
+        <div data-content id="principal" class="active">    
             <div class="col-div-3">
                 <div class="box">
                     <p>67<br/><span>Trabajadores</span></p>
@@ -165,31 +166,30 @@ if(($_SESSION['correo'])!=''){
                         </table>
                     </div>
                 </div>
+            </div>      
+            <div class="clearfix"></div>  
+        </div>
+            
+            <div data-content id="empleados">
+                
             </div>
             
-<!--        <div class="col-div-4">
-                <div class="box-4">
-                    <div class="content-box">
-                        <p>Total Sale <span>View All</span></p>
-                        <div class="circle-wrap">
-                            <div class="circle">
-                                <div class="mask full">
-                                    <div class="fill"></div>
-                                </div>
-                                <div class="mask half">
-                                    <div class="fill"></div>
-                                </div>
-                                <div class="inside-circle">70%</div>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-            </div>      
--->  
+            <div data-content id="proveedores">
+                
+            </div>
             
-            <div class="clearfix"></div>
+            <div data-content id="articulos">
+                
+            </div>
             
-        </div>
+            <div data-content id="clientes">
+                
+            </div>
+            
+            <div data-content id="rproductos">
+                
+            </div>
+            
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script type="text/javascript">
@@ -220,6 +220,20 @@ if(($_SESSION['correo'])!=''){
                $(".nav2").css('display','none');
                $("main").css('margin-left','300px');
             });
+        </script>
+        
+        <script defer> 
+            const targets = document.querySelectorAll('[data-target]')
+            const content = document.querySelectorAll('[data-content]')
+            targets.forEach(target => {
+                target.addEventListener('click', () => {
+                        content.forEach(c => {
+                        c.classList.remove('active')
+                    })
+                    const t = document.querySelector(target.dataset.target)
+                    t.classList.add('active')
+                })
+            })
         </script>
         
     </body>

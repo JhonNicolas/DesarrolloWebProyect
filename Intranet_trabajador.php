@@ -27,6 +27,7 @@ if(($_SESSION['correo'])!=''){
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>    
         <link href="CSS-Intranet/EstiloDashboard.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS-Intranet/EstiloBuscarRegistra.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="CSS/StyleAdProduct.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -41,8 +42,8 @@ if(($_SESSION['correo'])!=''){
             <a href="#" data-target="#Clientes" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
             <a href="#" data-target='#RProductos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Registro Platos</a>
             <a href="Controlador/Ctrl_CerrarSesion.php" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Cerrar sesión</a>
-            
         </div>
+        
         <header>   
         <div id="main">
             <div class="head">
@@ -61,6 +62,7 @@ if(($_SESSION['correo'])!=''){
                  </div>
                 <div class="clearfix"></div>
             </div>
+        </div>    
         </header>    
         <main>  
             
@@ -177,6 +179,19 @@ if(($_SESSION['correo'])!=''){
             </div>
             
             <div data-content id="empleados">
+                
+                <div class="contenedor-botones">
+                    <form action="#" method="POST">
+                        <div class="boton-box2">
+                            <input type="text" name="busqueda" placeholder="Búsqueda">
+                            <input type="submit" name="enviar" value="Buscar">
+                        </div>
+                    </form>    
+                    <div class="boton-box">
+                        <a href="RTrabajador.php">Registrar empleado</a>
+                    </div>
+                </div>
+                
                 <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">
@@ -196,6 +211,7 @@ if(($_SESSION['correo'])!=''){
                                 </tr>
                             </thead>  
                             <?php
+                            if(!isset($_POST['enviar'])){
                                $llenarsql="select t.ID_trab,t.nom_trab,t.ape_trab,t.correo,t.contra,t.dni_trab,t.numero_trab,t.cargo_trab from trabajadores t;";
                                $busc= mysqli_query($con, $llenarsql);
                             if($busc -> num_rows >0){
@@ -212,7 +228,25 @@ if(($_SESSION['correo'])!=''){
                                 <td><?php echo $mostrar['cargo_trab']?></td>
                             </tr>
                             <?php 
-                            }}
+                                }   }
+                            }else if(isset($_POST['enviar'])){
+                                $buscarEmpleado=$_POST['busqueda'];
+                                $sqlbuscar=$con->query("SELECT * FROM trabajadores WHERE ID_trab LIKE '%$buscarEmpleado%' OR nom_trab LIKE '%$buscarEmpleado%' OR ape_trab LIKE '%$buscarEmpleado%' "
+                                        . "OR correo LIKE '%$buscarEmpleado%' OR contra LIKE '%$buscarEmpleado%' OR dni_trab LIKE '%$buscarEmpleado%' OR numero_trab LIKE '%$buscarEmpleado%' OR cargo_trab LIKE '%$buscarEmpleado%' ");
+                                while($row = $sqlbuscar->fetch_array()){
+                            ?>
+                            <tr>
+                                <td><?php echo $row['ID_trab']?></td>
+                                <td><?php echo $row['nom_trab']?></td>
+                                <td><?php echo $row['ape_trab']?></td>
+                                <td><?php echo $row['correo']?></td>
+                                <td><?php echo $row['contra']?></td>
+                                <td><?php echo $row['dni_trab']?></td>
+                                <td><?php echo $row['numero_trab']?></td>
+                                <td><?php echo $row['cargo_trab']?></td>
+                            </tr>
+                            <?php 
+                                }   }
                             ?>
                         </table>  
                      </div>
@@ -222,6 +256,19 @@ if(($_SESSION['correo'])!=''){
             </div>
             
             <div data-content id="proveedores">
+                
+                <div class="contenedor-botones">
+                    <form action="#" method="POST">
+                        <div class="boton-box2">
+                            <input type="text" name="busqueda2" placeholder="Búsqueda">
+                            <input type="submit" name="enviar2" value="Buscar">
+                        </div>
+                    </form>    
+                    <div class="boton-box">
+                        <a href="RProveedor.php">Registrar proveedor</a>
+                    </div>
+                </div>
+                
                 <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">
@@ -239,24 +286,40 @@ if(($_SESSION['correo'])!=''){
                                 </tr>
                             </thead>  
                             <?php
-                            
-                               $llenarsql="select p.idProv, p.nombreProv,p.correo, p.RUC, p.telefono, p.direccion from proveedores p;";
-                               $busc= mysqli_query($con, $llenarsql);
+                            if(!isset($_POST['enviar2'])){
+                               $llenarsql2="select p.idProv, p.nombreProv,p.correo, p.RUC, p.telefono, p.direccion from proveedores p;";
+                               $busc2= mysqli_query($con, $llenarsql2);
 
-                            if($busc -> num_rows >0){
-                                while($mostrar= mysqli_fetch_array($busc)){
-
+                            if($busc2 -> num_rows >0){
+                                while($mostrar2= mysqli_fetch_array($busc2)){
                             ?>
                             <tr>
-                                <td><?php echo $mostrar['idProv']?></td>
-                                <td><?php echo $mostrar['nombreProv']?></td>
-                                <td><?php echo $mostrar['correo']?></td>
-                                <td><?php echo $mostrar['RUC']?></td>
-                                <td><?php echo $mostrar['telefono']?></td>
-                                <td><?php echo $mostrar['direccion']?></td>
+                                <td><?php echo $mostrar2['idProv']?></td>
+                                <td><?php echo $mostrar2['nombreProv']?></td>
+                                <td><?php echo $mostrar2['correo']?></td>
+                                <td><?php echo $mostrar2['RUC']?></td>
+                                <td><?php echo $mostrar2['telefono']?></td>
+                                <td><?php echo $mostrar2['direccion']?></td>
                             </tr>
                             <?php 
-                            }}
+                                }   }
+                            }else 
+                                if(isset($_POST['enviar2'])){
+                                $buscarProveedor=$_POST['busqueda2'];
+                                $sqlbuscar=$con->query("SELECT * FROM proveedores WHERE idProv LIKE '%$buscarProveedor%' OR nombreProv LIKE '%$buscarProveedor%' OR correo LIKE '%$buscarProveedor%'"
+                                        ."OR RUC LIKE '%$buscarProveedor%' OR telefono LIKE '%$buscarProveedor%' OR direccion LIKE '%$buscarProveedor%' ");
+                                while($row = $sqlbuscar->fetch_array()){
+                            ?>
+                            <tr>
+                                <td><?php echo $row['idProv']?></td>
+                                <td><?php echo $row['nombreProv']?></td>
+                                <td><?php echo $row['correo']?></td>
+                                <td><?php echo $row['RUC']?></td>
+                                <td><?php echo $row['telefono']?></td>
+                                <td><?php echo $row['direccion']?></td>
+                            </tr>
+                            <?php 
+                            }   } 
                             ?>
                         </table>
                         
