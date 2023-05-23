@@ -2,65 +2,68 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
+    <title>Restaurante Pihuicho</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="CSS/StyleCli.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="cssCarro/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/popper.min.js" type="text/javascript"></script>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="cssCarro/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
     
-        <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
-        <title>Restaurante Pihuicho</title>
-        <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/Catalogo/EstiloC.css" rel="stylesheet" type="text/css"/>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"><!-- comment -->
-        
+    <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-    <header id="header">
-       <input type="checkbox" id="check"> 
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
-            <div class="sidebar">
-                <h2>CATEGORIAS</h2>
-                <ul>
-                    <li><a href="CCarta.php"><i class="fas fa-qrcode"></i>Carta</a></li>
-                    <li><a href="CBebidas.php"><i class="fas fa-qrcode"></i>Bebidas</a></li>
-                    <li><a href="CPlatosT.php"><i class="fas fa-qrcode"></i>Platos Tipicos</a></li>   
-                </ul>
-            </div>
-            
-            <div class="logo">
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-green">
+                    <div class="logo">
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
-            </div>
+                    </div>
             
-                        
             <div class="info-header">
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
-                    <a href="Proveedores.php">Proveedores</a>
+                    <a href="RClientes.php">Registrate</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
             </div> 
-        
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                        <img src="Imagenes/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                        width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"></img>
+                        <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                            <table id="lista-carrito" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            <tbody></tbody>
+                            </table>
+                                <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </header>
-    
-    <div class="Barra-main">
+
+    <main>
+        <div class="Barra-main">
                 <nav>
                     <ul class="menu-horizontal">
                         <li><a href="Menu.php">Inicio</a></li>
@@ -76,15 +79,220 @@
                         <li><a href="Contacto.php">Contacto</a></li>
                     </ul>
                 </nav> 
-            </div>  
-    
-    
-    <br><br>
-    
+            </div>   
+        
+        <div class="pricing-header px-3 py-3 pt-md-1 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">CARTA</h1>
+        </div>
 
-    <div id="contenedor" class="contenedor"> </div>
-    <script src="js/VistCliPLato.js" type="text/javascript"></script>
-    <footer class="footer">
+        <div class="container" id="lista-productos">
+            
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">AGUAJE</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/0.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">15.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Vaso de aguaje con hielo </li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">CHICHA MORADA </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/1.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">20.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Chicha morada en una jarra de 1L.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">CHICHA MORADA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/2.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">10.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Clasica chicha morada con hielo en un vaso de 500ml</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">MASATO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/221.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">15.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Vaso de masato con hielo</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">COCA COLA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/3.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">2.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Botella de gaseosa de 1.5L.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">COCA COLA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/5.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">2.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Botella de gaseosa de 500ml</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">FANTA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/6.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">10.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Bebida gaseosa roja de 3L.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">FANTA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/Caldo.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">2.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Bebida gaseosa naranja personal de 400ml.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">FANTA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/Chicharron.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">11.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Bebida gaseosa naranja de 3L.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">INKA COLA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/Parihuela.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">3.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Gaseosa de 1.5L.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">INCA KOLA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/causa.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">7.00</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Gaseosa de 2.5L.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">INCA KOLA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CCarta/tacacho.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">2.50</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Gaseosa personal de 500ml</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+        <footer class="footer">
             <div class="container-f">
                 <div class="footer-row">
                     <div class="footer-links">
@@ -122,10 +330,12 @@
                 </div>
             </div>
         </footer>
-        
     
-    
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="js/carrito.js" type="text/javascript"></script>
+    <script src="js/pedido.js" type="text/javascript"></script>
 </body>
 
 </html>
-

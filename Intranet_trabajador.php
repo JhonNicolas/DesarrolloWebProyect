@@ -30,6 +30,7 @@ if(($_SESSION['correo'])!=''){
         <link href="CSS-Intranet/EstiloBuscarRegistra.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="CSS/StyleAdProduct.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body> 
         
@@ -188,7 +189,7 @@ if(($_SESSION['correo'])!=''){
                         </div>
                     </form>    
                     <div class="boton-box">
-                        <a href="RTrabajador.php">Registrar empleado</a>
+                        <a href="RTrabajador.php" target="blank">Registrar empleado</a>
                     </div>
                 </div>
                 
@@ -265,7 +266,7 @@ if(($_SESSION['correo'])!=''){
                         </div>
                     </form>    
                     <div class="boton-box">
-                        <a href="RProveedor.php">Registrar proveedor</a>
+                        <a href="RProveedor.php" target="blank">Registrar proveedor</a>
                     </div>
                 </div>
                 
@@ -330,6 +331,17 @@ if(($_SESSION['correo'])!=''){
             </div>
             
             <div data-content id="articulos">
+                <div class="contenedor-botones">
+                    <form action="#" method="POST">
+                        <div class="boton-box2">
+                            <input type="text" name="busqueda2" placeholder="Búsqueda">
+                            <input type="submit" name="enviar2" value="Buscar">
+                        </div>
+                    </form>    
+                    <div class="boton-box">
+                        <a href="RArticulos.php" target="blank">Registrar articulo</a>
+                    </div>
+                </div>
                 <div class="col-div-12">
                 <div class="box-8">
                     <div class="content-box">

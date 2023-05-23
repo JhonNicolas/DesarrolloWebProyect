@@ -1,53 +1,71 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
-        <title>Restaurante Pihuicho</title>
-        <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS/Catalogo/EstiloC.css" rel="stylesheet" type="text/css"/>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        
-        <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet">
-        <link href="CSS-Header/EstiloBarraMenu.css" rel="stylesheet">
-        <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    </head>
-    <body>
-        
-        <header>
-            
-            <input type="checkbox" id="check"> 
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
-            <div class="sidebar">
-                <h2>CATEGORIAS</h2>
-                <ul>
-                    <li><a href="CCarta.php"><i class="fas fa-qrcode"></i>Carta</a></li>
-                    <li><a href="CBebidas.php"><i class="fas fa-qrcode"></i>Bebidas</a></li>
-                    <li><a href="CPlatosT.php"><i class="fas fa-qrcode"></i>Platos Tipicos</a></li>
-                </ul>
-            </div>
-            
-            <div class="logo">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
+    <title>Restaurante Pihuicho</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="cssCarro/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/popper.min.js" type="text/javascript"></script>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="cssCarro/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    
+    <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS-Footer/EstiloPiePagina.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-green">
+                    
+                    <div class="logo">
                 <a href="MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
             </div>
+            
             <div class="info-header">
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
-                    <a href="Proveedores.php">Proveedores</a>
+                    <a href="RClientes.php">Registrate</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
             </div> 
-            
-        </header>
-        
-        <main>
-            
-           <div class="Barra-main">
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="Imagenes/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="Barra-main">
                 <nav>
                     <ul class="menu-horizontal">
                         <li><a href="Menu.php">Inicio</a></li>
@@ -64,101 +82,122 @@
                     </ul>
                 </nav> 
             </div>   
-            <div class="container">
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/ensde chonta.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Caldo de Gallina</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/inchicapi.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Inchicapi</h3>
-                        <p>Este plato típico se ha ido ganando su lugar con el paso del tiempo dentro de la gastronomía peruana
-                            por la intensidad de su aroma.</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/juane.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Juane</h3>
-                        <p>Este típico plato de la gastronomía peruana es uno de los más conocidos. 
-                            Está hecho a base de arroz, gallina y huevos.</p><br>
-                        <h3>S/.10</h3>
-                       <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/patarashca.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Patarashca</h3>
-                        <p>El plato típico Patarashca, es una comida a base de pescado a la parrilla acompañado</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/picdepaiche.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Picadillo de Paiche</h3>
-                        <p>Clasico plato muy reconocido en el país</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                </div>
-
-            <div class="container">
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/tacacho.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Tacacho con cecina</h3>
-                        <p>Este es otro plato típico muy conocido y rápido de preparar de la Amazonía peruana.</p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <figure>
-                        <img src="Imagenes/IProductos/CPlatosT/timbuche.jpg" alt=""/>
-                    </figure>
-                    <div class="contenido">
-                        <h3>Timbuche</h3>
-                        <p>El plato típico está hecha a base de pescado deshilachado, y no cualquier pescado sino del Paiche el 
-                            cual es uno de los pescados más celebrados de la gastronomía amazónica. </p><br>
-                        <h3>S/.10</h3>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                            <i class="bi bi-whatsapp"></i> Pedido</a>
-                    </div>
-                </div>
-            </div>
-        </main>
         
+        <div class="pricing-header px-3 py-3 pt-md-1 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">PLATOS TIPICOS</h1>
+        </div>
+
+        <div class="container" id="lista-productos">
+            
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ENSALADA DE CHONTA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CPlatosT/ensde chonta.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">25</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Esta deliciosa entrada muy consumida en nuestro país es una rica ensalada a base de 
+                                chonta o palmito con alguna variedad de vegetales que hacen de ella muy deliciosa. </li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">INCHICAPI </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CPlatosT/inchicapi.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">20</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Este plato típico se ha ido ganando su lugar con el paso del tiempo dentro de la gastronomía peruana
+                            por la intensidad de su aroma.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">JUANES</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CPlatosT/juane.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">30</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Este típico plato de la gastronomía peruana es uno de los más conocidos. 
+                            Está hecho a base de arroz, gallina y huevos.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">PATARASHCA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CPlatosT/patarashca.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">20</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>El plato típico Patarashca, es una comida a base de pescado a la parrilla acompañado</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">PICADILLO DE PAICHE</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CPlatosT/picdepaiche.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">35</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Clasico plato muy reconocido en el país</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">TACACHO CON CECINA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="Imagenes/IProductos/CPlatosT/tacacho.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">S/. <span class="">35</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Este es otro plato típico muy conocido y rápido de preparar de la Amazonía peruana.</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
         <footer class="footer">
             <div class="container-f">
                 <div class="footer-row">
@@ -197,7 +236,12 @@
                 </div>
             </div>
         </footer>
-        
-    </body>
-</html>
+    
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="js/carrito.js" type="text/javascript"></script>
+    <script src="js/pedido.js" type="text/javascript"></script>
+</body>
 
+</html>
