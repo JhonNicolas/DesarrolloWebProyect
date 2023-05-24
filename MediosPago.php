@@ -39,36 +39,35 @@
                 </nav>
             </div> 
         </header> 
-        <BR>
-<section>    
-    <br><br><br><br><br><br><br><br><br><br>
-    <div class="container">
-        <div class="card">
-            <figure>
-                <img src="Imagenes/info/efec.jpg" alt=""/>
-            </figure>
-            <div class="contenido">
-                <h3>EFECTIVO</h3>
+        
+        <main>
+        <div class="container">
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/info/efec.jpg" alt=""/>
+                </figure>
+                <div class="contenido">
+                    <h3>EFECTIVO</h3>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/info/plin.jpg" alt=""/>
+                </figure>
+                <div class="contenido">
+                    <h3>PLIN</h3>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/info/yape.jpg" alt=""/>
+                </figure>
+                <div class="contenido">
+                    <h3>YAPE</h3>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <figure>
-                <img src="Imagenes/info/plin.jpg" alt=""/>
-            </figure>
-            <div class="contenido">
-                <h3>PLIN</h3>
-            </div>
-        </div>
-        <div class="card">
-            <figure>
-                <img src="Imagenes/info/yape.jpg" alt=""/>
-            </figure>
-            <div class="contenido">
-                <h3>YAPE</h3>
-            </div>
-        </div>
-    </div>
-</section>
+      </main>      
       <footer class="footer">
             <div class="container-f">
                 <div class="footer-row">

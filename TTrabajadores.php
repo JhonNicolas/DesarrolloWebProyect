@@ -132,7 +132,7 @@ $mensaje=null;
             </thead>    
             <tbody>
         <?php
-
+        $sql = "select t.ID_trab, t.nom_trab, ape_trab, t.correo,t.contra,t.dni_trab, t.numero_trab, t.cargo_trab from trabajadores t;";
         $busc= mysqli_query($con, $sql);
 
         if($busc -> num_rows >0){

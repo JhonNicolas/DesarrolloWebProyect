@@ -16,6 +16,18 @@ body {
 .contenedor-proveedor .login-box{
     top: 75%;
 }
+.contenedor-articulo{
+    height: 145vh;
+}
+.contenedor-articulo .login-box{
+    top: 91%;
+}
+.contenedor-cliente{
+    height: 122vh;
+}
+.contenedor-cliente .login-box{
+    top: 78.5%;
+}
 .login-box {
   position: absolute;
   top: 60%;
