@@ -102,7 +102,11 @@ if(($_SESSION['correo'])!=''){
                 
                 <div class="col-div-3">
                     <div class="box">
-                        <p>99<br/><span>Muy pronto xd</span></p>
+                        <?php
+                        $contandoPla=$con->query("select * from plato;");
+                        $rowpla=mysqli_num_rows($contandoPla);
+                        ?>
+                        <p><?php echo $rowpla; ?><br/><span>Platos</span></p>
                         <i class="fa fa-shopping-bag box-icon"></i>
                     </div>
                 </div>
