@@ -1,3 +1,19 @@
+
+<?php
+session_start();
+require "Conectar.php";
+$con = fnConnect($msg);
+$userCorreo=$_SESSION['correo'];
+$sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
+$numeracion=0; //contador de registros
+$respu = mysqli_query($con, $sqlcliente);
+    while($datos=$respu->fetch_assoc()){
+        $idcli = $datos['ID_cli'];
+        $nombrecli = $datos['nom_cli'];
+        $correocli = $datos['correo'];
+    }
+if(($_SESSION['correo'])!=''){    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +44,15 @@
             </div>
             
             <div class="info-header">
+                <?php if(($_SESSION['correo'])!=''){    
+                ?>
                 <nav>
-                    <a href="MenuPrincipal.php">Tienda</a>
-                    <a href="RClientes.php">Registrate</a>
-                    <a href="InicioS.php">Login</a>
+                    <a href="Intranet_cliente.php" target="blank"><?php echo 'Hola ';echo $nombrecli ?></a>
+                    <a href="Controlador/Ctrl_CerrarSesion.php">Cerrar Sesión</a>
                 </nav>
+                <?php 
+                    }
+                ?>
             </div> 
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
@@ -243,5 +263,8 @@
     <script src="js/carrito.js" type="text/javascript"></script>
     <script src="js/pedido.js" type="text/javascript"></script>
 </body>
-
+<?php
+}else {
+        header("location:InicioS.php");
+    }?>
 </html>

@@ -368,7 +368,7 @@ if(($_SESSION['correo'])!=''){
                         </div>
                     </form>   
                     <div class="boton-box">
-                        <a href="RClientes.php" target="blank">Registrar articulo</a>
+                        <a href="RClientes.php" target="blank">Registrar cliente</a>
                     </div>
                 </div>
                 <div class="col-div-12">
@@ -414,74 +414,50 @@ if(($_SESSION['correo'])!=''){
             </div>
             
        <div data-content id="rproductos">
-            <h1>REGISTRO PLATO</h1>
-            <div class="contenedor">
-                <!-- Añadir -->
-                <div class="añadir">
-                    <h2>Añadir</h2>
-                    <form>
-                        <label>Nombre del producto</label>
-                        <input type="text" id="productoAñadir" name="nombreDelProducto">
-
-                        <label>Valor del producto</label>
-                        <input type="number" id="valorAñadir">
-
-                        <label>Existencia</label>
-                        <input type="number" id="existenciaAñadir">
-
-                        <label>Url Imagen</label>
-                        <input type="text" id="ImagenAñadir">
-
-                        <input class="button" type="button" id="botonAñadir" value="Añadir">
-                    </form>
+            <div class="contenedor-botones">
+                    <form action="#" method="POST">
+                        <div class="boton-box2">
+                            <input  class="light-table-filter" data-table="table_id" placeholder="Buscando...">
+                        </div>
+                    </form>   
+                    <div class="boton-box">
+                        <a href="RPlatos.php" target="blank">Registrar plato</a>
+                    </div>
                 </div>
-                <!-- Editar -->
-                <div class="editar">
-                    <h2>Editar</h2>
-                    <form>
-                        <label>Nombre del producto</label>
-                        <select id="productoEditar">
-                            <option value="">---</option>
-                        </select>
-
-                        <label>Atributo</label>
-                        <select id="atributoEditar">
-                            <option value="">---</option>
-                        </select>
-
-                        <label>Nuevo valor</label>
-                        <input type="text" id="nuevoAtributo">
-
-                        <input class="button" type="button" id="botonEditar" value="Editar">
-                    </form>
-                </div>
-
-                <!-- Eliminar -->
-                <div class="eliminar">
-                    <h2>Eliminar</h2>
-
-                    <form>
-                        <label>Nombre del producto</label>
-                        <select id="productoEliminar">
-                            <option value="">---</option>
-                        </select>
-                        <input class="button" type="button" id="botonEliminar" value="Eliminar">
-                    </form>
-                </div>
-            </div>
-
-            <!-- Mostrar el mensaje -->
-            <div class="contenedorMensaje">
-                <div id="mensaje"></div>
-            </div>
-
-            <!-- Productos -->
-            <div class="contenedorProductos">
-                <h2>Platos</h2>
-                <div class="mostrarProductos" id="mostrarProductos">
-
-                </div>
-            </div>
+                <div class="col-div-12">
+                    <div class="box-8">
+                        <div class="content-box">
+                            <p>Platos registrados</p>
+                            <table class="table table-dark table-striped table-hover table_id" id="tblClientes">
+                                <thead>
+                                    <tr>
+                                        <th class="colorCabecera">ID</th>
+                                        <th class="colorCabecera">NOMBRE</th>
+                                        <th class="colorCabecera">PRECIO</th>
+                                        <th class="colorCabecera">IMAGEN</th> 
+                                    </tr>
+                                </thead>  
+                                <?php
+                                    $sqlPla="select p.ID_plato,p.nom_plato,p.precioP,p.imagen from plato p;";
+                                    $buscPla= mysqli_query($con, $sqlPla);
+                                    if($buscPla -> num_rows >0){
+                                        while($mostrar= mysqli_fetch_array($buscPla)){
+                                ?>
+                                <tr>
+                                    <td><?php echo $mostrar['ID_plato']?></td>
+                                    <td><?php echo $mostrar['nom_plato']?></td>
+                                    <td><?php echo $mostrar['precioP']?></td>
+                                    <td><img src="data:image/jpg;base64,<?php echo base64_encode($mostar['imagen']); ?>"/></td>
+                                </tr>
+                                <?php
+                                    }   }
+                                ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>            
+                <div class="clearfix"></div>
+                <br>
         </div>
             
         </main>

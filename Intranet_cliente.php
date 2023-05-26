@@ -31,10 +31,8 @@ if(($_SESSION['correo'])!=''){
         <div id="mySidenav" class="sidenav">
             <p class="logo"><span>R</span>-Pihuicho</p>
             <a href="#" data-target="#Principal" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;Principal</a>
-            <a href="#" data-target="#Proveedores" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Mis pedidos</a>
-            <a href="#" data-target="#Articulos" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Platos</a>
+            <a href="#" data-target="#Compras" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Mis pedidos</a>
             <a href="#" data-target="#Clientes" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Mis datos</a>
-            <a href="#" data-target='#RProductos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Proximamente</a>
             <a href="Controlador/Ctrl_CerrarSesion.php" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
         <header>   
@@ -72,12 +70,8 @@ if(($_SESSION['correo'])!=''){
             <div class="clearfix"></div>  
         </div>
                         
-            <div data-content id="proveedores">
+            <div data-content id="COMPRAS">
                 Proximamente2...
-            </div>
-            
-            <div data-content id="articulos">
-                Proximament3...
             </div>
             
             <div data-content id="clientes">
@@ -106,10 +100,6 @@ if(($_SESSION['correo'])!=''){
                         </div>
                     </div>
                 </div><br>
-            </div>
-            
-            <div data-content id="rproductos">
-                Proximamente4...
             </div>
             
         </main>
