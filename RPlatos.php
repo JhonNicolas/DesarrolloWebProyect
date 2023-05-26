@@ -6,7 +6,7 @@
         <title>Restaurante Pihuicho</title>
         <link href="CSS-Login/EstiloHLogin.css.css" rel="stylesheet">
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Login/EstiloLogin.css" rel="stylesheet">
+        <link href="CSS-Login/EstiloLoginn.css" rel="stylesheet">
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -52,12 +52,16 @@
                         <label>Nombre</label>
                       </div>
                       <div class="user-box">
+                        <input type="text" REQUIRED name="descripcionp" required="">
+                        <label>Descripción</label>
+                      </div>  
+                      <div class="user-box">
                         <input type="text" REQUIRED name="preciop" required="">
                         <label>Precio</label>
-                      </div>  
-                       <div class="user-box">
-                        <input type="file" name="imagenp" required="">
-                        
+                      </div>    
+                      <div class="box-upload">
+                            <label for="subirImagen"><i class="fa-solid fa-upload"></i>Subir imagen</label>
+                            <input type="file" id="subirImagen" name="imagenp" required="">
                       </div> 
                       
                       <div class="boton-box">

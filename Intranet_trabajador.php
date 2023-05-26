@@ -25,7 +25,7 @@ if(($_SESSION['correo'])!=''){
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>    
-        <link href="CSS-Intranet/EstiloDash.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS-Intranet/EstiloDashb.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Intranet/EstiloBuscarRegistrar.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="CSS/StyleAdProduct.css" rel="stylesheet" type="text/css"/>
@@ -40,7 +40,7 @@ if(($_SESSION['correo'])!=''){
             <a href="#" data-target="#Proveedores" class="icon-a"><i class="fa-solid fa-truck-fast icons"></i>&nbsp;&nbsp;Proveedores</a>
             <a href="#" data-target="#Articulos" class="icon-a"><i class="fa fa-tasks icons"></i>&nbsp;&nbsp;Articulos</a>
             <a href="#" data-target="#Clientes" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;Clientes</a>
-            <a href="#" data-target='#RProductos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Registro Platos</a>
+            <a href="#" data-target='#Rplatos'class="icon-a"><i class="fa fa-shopping-bag icons"></i>&nbsp;&nbsp;Registro Platos</a>
             <a href="Controlador/Ctrl_CerrarSesion.php" name="cerrar" class="icon-a"><i class="fa-solid fa-right-from-bracket icons"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
         
@@ -413,7 +413,7 @@ if(($_SESSION['correo'])!=''){
                 <br>
             </div>
             
-       <div data-content id="rproductos">
+       <div data-content id="rplatos">
             <div class="contenedor-botones">
                     <form action="#" method="POST">
                         <div class="boton-box2">
@@ -433,12 +433,13 @@ if(($_SESSION['correo'])!=''){
                                     <tr>
                                         <th class="colorCabecera">ID</th>
                                         <th class="colorCabecera">NOMBRE</th>
+                                        <th class="colorCabecera">DESCRIPCION</th>
                                         <th class="colorCabecera">PRECIO</th>
                                         <th class="colorCabecera">IMAGEN</th> 
                                     </tr>
                                 </thead>  
                                 <?php
-                                    $sqlPla="select p.ID_plato,p.nom_plato,p.precioP,p.imagen from plato p;";
+                                    $sqlPla="select p.ID_plato,p.nom_plato,p.descrip_plato,p.precioP,p.imagen from plato p;";
                                     $buscPla= mysqli_query($con, $sqlPla);
                                     if($buscPla -> num_rows >0){
                                         while($mostrar= mysqli_fetch_array($buscPla)){
@@ -446,8 +447,9 @@ if(($_SESSION['correo'])!=''){
                                 <tr>
                                     <td><?php echo $mostrar['ID_plato']?></td>
                                     <td><?php echo $mostrar['nom_plato']?></td>
+                                    <td><?php echo $mostrar['descrip_plato']?></td>   
                                     <td><?php echo $mostrar['precioP']?></td>
-                                    <td><img src="data:image/jpg;base64,<?php echo base64_encode($mostar['imagen']); ?>"/></td>
+                                    <td><img height="50px" width="80px" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']); ?>"/></td>
                                 </tr>
                                 <?php
                                     }   }
