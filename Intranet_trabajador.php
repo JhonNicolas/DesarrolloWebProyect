@@ -25,7 +25,7 @@ if(($_SESSION['correo'])!=''){
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>    
-        <link href="CSS-Intranet/EstiloDashboard.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS-Intranet/EstiloDash.css" rel="stylesheet" type="text/css"/>
         <link href="CSS-Intranet/EstiloBuscarRegistrar.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="CSS/StyleAdProduct.css" rel="stylesheet" type="text/css"/>
