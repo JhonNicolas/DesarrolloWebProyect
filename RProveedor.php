@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Login/EstiloLoginn.css" rel="stylesheet">
+        <link href="CSS-Login/EstiloLoginnn.css" rel="stylesheet">
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -32,10 +35,31 @@
             </div>
             
             <div class="info-header">
+                <?php 
+                    if(empty(($_SESSION['correo']))){
+                ?>
                 <nav>
-                    <a href="RClientes.php" >Registrar Usuario</a>
+                    <a href="MenuPrincipal.php">Tienda</a>
+                    <a href="RClientes.php">Registrar usuario</a>
                     <a href="InicioS.php" >Iniciar sesión</a>
                 </nav>
+                <?php 
+                    }else if(isset($_SESSION['correo'])){   
+                    require_once "Conectar.php";
+                    $con = fnConnect($msg);     
+                    $userCorreo=$_SESSION['correo'];
+                    $sqlcliente="SELECT * FROM trabajadores where correo='$userCorreo';";
+                    $respu = mysqli_query($con, $sqlcliente);
+                    if($respu -> num_rows >0){
+                        while($mostrar= mysqli_fetch_array($respu)){
+                ?>
+                <nav>
+                    <a href="Intranet_cliente.php" target="blank"><?php echo 'Hola ';echo $mostrar['nom_trab'] ?></a>
+                    <a href="Controlador/Ctrl_CerrarSesion.php">Cerrar Sesión</a>
+                </nav>
+                 <?php 
+                    }  }  }   
+                 ?>
             </div>            
         </header> 
        
@@ -69,15 +93,10 @@
                           <input type="submit" name="enviar" value="Registrar Trabajador" id="enviar">
                       </div>
                     </form>
-                    <div class="boton-outline-info">
-                          <a href="TProveedores.php">Ver Tabla</a>
-                    </div>
+
                 </div>
             </div>    
-        </main>   
-        
-        
-        
+        </main>     
     </body>
 </html>
 

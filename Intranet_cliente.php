@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $userCorreo=$_SESSION['correo'];
 $sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
@@ -8,15 +8,10 @@ $numeracion=0; //contador de registros
 $respu = mysqli_query($con, $sqlcliente);
     while($datos=$respu->fetch_assoc()){
         $idcli = $datos['ID_cli'];
-        $codadmin = $datos['COD_admin'];
         $nombrecli = $datos['nom_cli'];
-        $apecli = $datos['ape_cli'];
         $correocli = $datos['correo'];
-        $contracli = $datos['contra'];
-        $dnicli = $datos['DNI_cli'];
-        $numerocli = $datos['cell_cli'];
     }
-if(($_SESSION['correo'])!=''){    
+if(($_SESSION['correo'])!='' && $nombrecli !=''){    
 ?>
 <html>
     <head>
@@ -62,7 +57,7 @@ if(($_SESSION['correo'])!=''){
                 <div class="box-8">
                     <div class="content-box">
                         <p class="p1">¡Bienvenido a Restaurant Pihuichos!</p>
-                        <a href="MenuPrincipal.php"><img src="Imagenes/info/loguito.gif" alt=""/></a>
+                        <a href="MenuPrincipal.php" target="blank"><img src="Imagenes/info/loguito.gif" alt=""/></a>
                         <p class="p2">La mejor opción en platos turísticos y comida marina.</p>
                     </div>
                 </div>
@@ -152,6 +147,6 @@ if(($_SESSION['correo'])!=''){
 </html>
 <?php 
     }else {
-        header("location:InicioS.php");
+        header("location:Controlador/Ctrl_CerrarSesion.php");
     }
 ?>

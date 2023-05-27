@@ -1,5 +1,5 @@
 <?php
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $sql = "select c.nom_cli,c.ape_cli, c.correo, c.contra,
 	c.DNI_cli, c.cell_cli  from clientes c;";

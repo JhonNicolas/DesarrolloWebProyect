@@ -1,3 +1,8 @@
+<?php
+session_start();
+require "Conectar.php";
+$con = fnConnect($msg); 
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -33,51 +38,68 @@
             </div>
             
             <div class="info-header">
+                <?php 
+                    if(empty(($_SESSION['correo']))){
+                ?>
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
-                    <a href="#">Proveedores</a>
-                    <a href="CPromociones.php">Promociones</a>
+                    <a href="Proveedores.php">Proveedores</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
+                <?php 
+                    }else if(isset($_SESSION['correo'])){
+                    $userCorreo=$_SESSION['correo'];
+                    $sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
+                    $respu = mysqli_query($con, $sqlcliente);
+                    if($respu -> num_rows >0){
+                        while($mostrar= mysqli_fetch_array($respu)){
+                ?>
+                <nav>
+                    <a href="Intranet_cliente.php" target="blank"><?php echo 'Hola ';echo $mostrar['nom_cli'] ?></a>
+                    <a href="Controlador/Ctrl_CerrarSesion.php">Cerrar Sesión</a>
+                </nav>
+                 <?php 
+                    }  }  }   
+                 ?>
             </div> 
         </header> 
         <BR>
-<section>          
-    <div class="container">
-        <div class="card">
-            <figure>
-                <img src="Imagenes/mision.jpg" alt=""/>
-            </figure>
-            <div class="contenido">
-                <h3>MISION</h3>
-                <p>Nos dedicamos a satisfacer las necesidades gastronómicas de nuestros clientes,
-                    preparando y ofreciendo alimentos y servicios de la calidad más alta y una atención
-                    personalizada que asegure su satisfacción</p><br>
+        <main>
+        <div class="container">
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/mision.jpg" alt=""/>
+                </figure>
+                <div class="contenido">
+                    <h3>MISION</h3>
+                    <p>Nos dedicamos a satisfacer las necesidades gastronómicas de nuestros clientes,
+                        preparando y ofreciendo alimentos y servicios de la calidad más alta y una atención
+                        personalizada que asegure su satisfacción</p><br>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/vision.jpg" alt=""/>
+                </figure>
+                <div class="contenido">
+                    <h3>VISION</h3>
+                    <p>Deseamos ser uno de los restaurantes más conocidos a nivel local e internacional, ademas queremos contribuir a una comunidad 
+                        más reconocida por nuestros diversos platos</p>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/local.jpg" alt=""/>
+                </figure>
+                <div class="contenido">
+                    <h3>LOCAL</h3>
+                    <p>Estamos en el Pje. José Gálvez 281 25000 <br> Pucalpa, Peru</p><br>
+                    <a href="https://www.google.com/maps/@-8.3623569,-74.5704541,3a,60y,138.4h,91.96t/data=!3m6!1e1!3m4!1s5iAu0afHs2eJcM-03qqmQQ!2e0!7i13312!8i6656" target="blanck">
+                        Encuentranos!</a>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <figure>
-                <img src="Imagenes/vision.jpg" alt=""/>
-            </figure>
-            <div class="contenido">
-                <h3>VISION</h3>
-                <p>Deseamos ser uno de los restaurantes más conocidos a nivel local e internacional, ademas queremos contribuir a una comunidad 
-                    más reconocida por nuestros diversos platos</p>
-            </div>
-        </div>
-        <div class="card">
-            <figure>
-                <img src="Imagenes/local.jpg" alt=""/>
-            </figure>
-            <div class="contenido">
-                <h3>LOCAL</h3>
-                <p>Estamos en el Pje. José Gálvez 281 25000 <br> Pucalpa, Peru</p><br>
-                <a href="https://www.google.com/maps/@-8.3623569,-74.5704541,3a,60y,138.4h,91.96t/data=!3m6!1e1!3m4!1s5iAu0afHs2eJcM-03qqmQQ!2e0!7i13312!8i6656" target="blanck">
-                    Encuentranos!</a>
-            </div>
-        </div>
-    </div>
-</section>
+      </main>      
       <footer class="footer">
             <div class="container-f">
                 <div class="footer-row">

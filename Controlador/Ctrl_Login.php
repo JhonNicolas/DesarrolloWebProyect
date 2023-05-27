@@ -1,5 +1,5 @@
 <?php
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $numeracion=0; //contador de registros
 

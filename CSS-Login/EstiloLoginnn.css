@@ -17,10 +17,10 @@ body {
     top: 75%;
 }
 .contenedor-articulo{
-    height: 145vh;
+    height: 125vh;
 }
 .contenedor-articulo .login-box{
-    top: 91%;
+    top: 80%;
 }
 .contenedor-cliente{
     height: 122vh;

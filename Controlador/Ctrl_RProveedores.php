@@ -1,5 +1,5 @@
 <?php
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $sql = "select p.nombreProv,p.correo, p.RUC, p.telefono, p.direccion from proveedores p;";
 $lista= mysqli_query($con, $sql);

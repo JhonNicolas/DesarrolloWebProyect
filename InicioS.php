@@ -4,7 +4,7 @@
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
         <title>Restaurante Pihuicho</title>
         <link href="CSS-Header/EstiloHContenedor.css" rel="stylesheet" type="text/css"/>
-        <link href="CSS-Login/EstiloLoginn.css" rel="stylesheet">
+        <link href="CSS-Login/EstiloLoginnn.css" rel="stylesheet">
         <link href="CSS/Catalogo/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/Catalogo/EstiloBFila.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -34,7 +34,7 @@
             <div class="info-header">
                 <nav>
                     <a href="RClientes.php">Registrar usuario</a>
-                    <a href="RClientes_Login.php" >Iniciar sesión</a>
+                    <a href="InicioS.php" >Iniciar sesión</a>
                 </nav>
             </div>            
         </header> 

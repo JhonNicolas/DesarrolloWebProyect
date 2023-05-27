@@ -1,5 +1,5 @@
 <?php
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 
 if(isset($_POST["enviar"])){
@@ -13,9 +13,6 @@ if(isset($_POST["enviar"])){
             echo '<div class="success">Registro completado</div>';
         }else{
             echo '<div class="alerta">Ingrese los datos correctos a los campos</div>';
-        }
-        
+        }   
     }
-
-
 ?>

@@ -1,5 +1,5 @@
 <?php
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $sql = "select a.nom_articulo, a.cantidad, a.Cproducto, a.Encargado, a.precioA,
          a.Proveedor from Articulo a;";

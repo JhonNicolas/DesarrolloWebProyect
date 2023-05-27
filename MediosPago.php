@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "Conectar.php";
+$con = fnConnect($msg); 
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -28,16 +33,34 @@
             </div>
             
             <div class="logo">
-                <a href=MenuPrincipal.php"><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
+                <a href=MenuPrincipal.php><img src="Imagenes/IconoLogoGif.gif" alt=""/></a>
             </div>
                         
             <div class="info-header">
+                <?php 
+                    if(empty(($_SESSION['correo']))){
+                ?>
                 <nav>
                     <a href="MenuPrincipal.php">Tienda</a>
                     <a href="Proveedores.php">Proveedores</a>
                     <a href="InicioS.php">Login</a>
                 </nav>
-            </div> 
+                <?php 
+                    }else if(isset($_SESSION['correo'])){
+                    $userCorreo=$_SESSION['correo'];
+                    $sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
+                    $respu = mysqli_query($con, $sqlcliente);
+                    if($respu -> num_rows >0){
+                        while($mostrar= mysqli_fetch_array($respu)){
+                ?>
+                <nav>
+                    <a href="Intranet_cliente.php" target="blank"><?php echo 'Hola ';echo $mostrar['nom_cli'] ?></a>
+                    <a href="Controlador/Ctrl_CerrarSesion.php">Cerrar Sesión</a>
+                </nav>
+                 <?php 
+                    }  }  }   
+                 ?>
+              </div> 
         </header> 
         
         <main>

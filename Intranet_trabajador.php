@@ -1,24 +1,16 @@
 <?php
 session_start();
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $user_Correo=$_SESSION['correo'];
 $sql="SELECT * FROM trabajadores inner join cargo on trabajadores.cargo_trab = cargo.ID_cargo where correo='$user_Correo';";
 $respuesta = mysqli_query($con, $sql);
     while($data=$respuesta->fetch_assoc()){
         $idtrab = $data['ID_trab'];
-        $codadmin = $data['COD_admin'];
         $nombretrab = $data['nom_trab'];
-        $apetrab = $data['ape_trab'];
-        $correotrab = $data['correo'];
-        $contratrab = $data['contra'];
-        $dnitrab = $data['dni_trab'];
-        $numerotrab = $data['numero_trab'];
-        $cargotrab = $data['cargo_trab'];
-        $idcargo = $data['ID_cargo'];
         $nombrecargo = $data['nombre_cargo'];
     }  
-if(($_SESSION['correo'])!=''){    
+if(($_SESSION['correo'])!='' && $nombretrab !=''){    
 ?>
 <html>
     <head>
@@ -518,6 +510,6 @@ if(($_SESSION['correo'])!=''){
 </html>
 <?php 
     }else {
-        header("location:InicioS.php");
+        header("location:Controlador/Ctrl_CerrarSesion.php");
     }
 ?>

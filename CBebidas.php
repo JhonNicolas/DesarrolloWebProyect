@@ -1,7 +1,6 @@
-
 <?php
 session_start();
-require "Conectar.php";
+require_once "Conectar.php";
 $con = fnConnect($msg);
 $userCorreo=$_SESSION['correo'];
 $sqlcliente="SELECT * FROM clientes where correo='$userCorreo';";
@@ -16,7 +15,6 @@ if(($_SESSION['correo'])!=''){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
     <title>Restaurante Pihuicho</title>
@@ -43,15 +41,27 @@ if(($_SESSION['correo'])!=''){
                     </div>
            
             <div class="info-header">
-                <?php if(($_SESSION['correo'])!=''){    
+                <?php if(isset($nombrecli)){    
                 ?>
                 <nav>
                     <a href="Intranet_cliente.php" target="blank"><?php echo 'Hola ';echo $nombrecli ?></a>
                     <a href="Controlador/Ctrl_CerrarSesion.php">Cerrar Sesión</a>
                 </nav>
                 <?php 
-                    }
+                    }else {
+                        $sqlcliente="SELECT * FROM trabajadores where correo='$userCorreo';";
+                        $respu = mysqli_query($con, $sqlcliente);
+                        if($respu -> num_rows >0){
+                        while($mostrar= mysqli_fetch_array($respu)){
                 ?>
+                <nav>
+                    <a href="Intranet_trabajador.php" target="blank"><?php echo 'Hola ';echo $mostrar['nom_trab'] ?></a>
+                    <a href="Controlador/Ctrl_CerrarSesion.php">Cerrar Sesión</a>
+                </nav>
+                 <?php 
+                    }  }  }   
+                 ?>
+
             </div> 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
@@ -86,7 +96,7 @@ if(($_SESSION['correo'])!=''){
         <div class="Barra-main">
                 <nav>
                     <ul class="menu-horizontal">
-                        <li><a href="Menu.php">Inicio</a></li>
+                        <li><a href="MenuPrincipal.php">Inicio</a></li>
                         <li><a href="Nosotros.php">Nosotros</a></li>
                         <li>
                             <a href="#">Producto</a>
@@ -407,8 +417,8 @@ if(($_SESSION['correo'])!=''){
     <script src="js/carrito.js" type="text/javascript"></script>
     <script src="js/pedido.js" type="text/javascript"></script>
 </body>
+</html>
 <?php
 }else {
         header("location:InicioS.php");
-    }?>
-</html>
+}?>
