@@ -18,7 +18,7 @@
   margin-top: 40px;
   border-radius: 10px;
   border: 1.5px solid black;
-  background-color: #26314a;
+  background-color: #273f4a;
 }
 
 .contenedor-botones .boton-box a{
@@ -41,7 +41,7 @@
 .contenedor-botones .boton-box2 input:hover,
 .contenedor-botones .boton-box a:hover
 {
-  background: #4b6ab0;
+  background: #273f4a;
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #4b6ab0,

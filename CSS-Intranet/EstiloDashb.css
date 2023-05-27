@@ -1,7 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #1b203d;
+    background-color: #758d7c;
     font-family: system-ui;
 }
 .clearfix{
@@ -25,7 +25,7 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #272c4a;
+    background-color: #273f4a;
     overflow: hidden;
     transition: 0.5s;
     padding-top: 30px;
@@ -131,7 +131,7 @@ main{
 .box{
     width: 85%;
     height: 100px;
-    background-color: #272c4a;
+    background-color: #273f4a;
     margin-left: 10px;
     padding: 10px;
 }
@@ -185,7 +185,7 @@ main{
 }
 .box-8, .box-4{
     width: 96.5%;
-    background-color: #272c4a;
+    background-color: #273f4a;
     height: auto;
 }
 .box-8{
